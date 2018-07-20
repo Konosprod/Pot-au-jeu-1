@@ -18,6 +18,8 @@ public enum PartOrientation
 
 public class BodyPart : MonoBehaviour {
 
+    public int id;
+    public int quantity;
     public PartType partType;
     public bool canPick;
     public Sprite itemSprite;
