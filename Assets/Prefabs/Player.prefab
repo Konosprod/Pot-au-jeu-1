@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 212300761911871250}
   - component: {fileID: 61163536312229216}
   - component: {fileID: 114864913324537798}
+  - component: {fileID: 114688998620640900}
   m_Layer: 0
   m_Name: RightArmTest
   m_TagString: Untagged
@@ -94,6 +95,7 @@ GameObject:
   - component: {fileID: 212324728516104552}
   - component: {fileID: 61448877572111758}
   - component: {fileID: 114983922496950382}
+  - component: {fileID: 114496632563806578}
   m_Layer: 0
   m_Name: LeftArmTest
   m_TagString: Untagged
@@ -321,7 +323,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61163536312229216
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -491,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  hp: 100
 --- !u!114 &114226779578671642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -528,6 +531,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeAttack: 0
   atk: 10
+--- !u!114 &114496632563806578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662884857055042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTime: 0.5
+  canAttack: 1
+  forward: 1
+--- !u!114 &114688998620640900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297844862555804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTime: 0.5
+  canAttack: 1
+  forward: 0
 --- !u!114 &114768999212029208
 MonoBehaviour:
   m_ObjectHideFlags: 1
