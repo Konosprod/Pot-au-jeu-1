@@ -9,46 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1592472820105784}
+  m_RootGameObject: {fileID: 1487770141390094}
   m_IsPrefabParent: 1
---- !u!1 &1592472820105784
+--- !u!1 &1487770141390094
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4705862439380022}
-  - component: {fileID: 212445979613121078}
-  - component: {fileID: 61424436492494796}
-  - component: {fileID: 114875199278095526}
-  - component: {fileID: 114779624668460988}
+  - component: {fileID: 4118306700799908}
+  - component: {fileID: 212652693523304440}
+  - component: {fileID: 61621186188391312}
+  - component: {fileID: 114647209785455152}
   m_Layer: 0
-  m_Name: RightArmTest
+  m_Name: ZombieLeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4705862439380022
+--- !u!4 &4118306700799908
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592472820105784}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1487770141390094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!61 &61424436492494796
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61621186188391312
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592472820105784}
+  m_GameObject: {fileID: 1487770141390094}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -57,10 +56,10 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -1.28}
   m_SpriteTilingProperty:
-    border: {x: 1.0799999, y: 0, z: 1.0799999, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
     oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 0.16, y: 0.16}
+    newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -68,12 +67,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 2.56}
   m_EdgeRadius: 0
---- !u!114 &114779624668460988
+--- !u!114 &114647209785455152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592472820105784}
+  m_GameObject: {fileID: 1487770141390094}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
@@ -81,37 +80,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partType: 0
   canPick: 0
-  sprite: {fileID: 21300000, guid: cde6d359b106c87409d7b4e7689e2b86, type: 3}
+  itemSprite: {fileID: 21300000, guid: aabcb9ae59fde124383a7b0cbfd2c2fe, type: 3}
   stamina: 0
   movementSpeed: 0
   sprintSpeed: 0
   legOrientation: 0
-  damages: 1
-  range: 0
-  armOrientation: 1
+  damages: 2
+  range: 1.25
+  armOrientation: 0
   health: 0
   armor: 0
   intelligence: 0
   skill: {fileID: 0}
---- !u!114 &114875199278095526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592472820105784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c81edda5fabf59d4abebb6ef19886d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeAttack: 0
-  atk: 10
---- !u!212 &212445979613121078
+--- !u!212 &212652693523304440
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592472820105784}
+  m_GameObject: {fileID: 1487770141390094}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -141,12 +127,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cde6d359b106c87409d7b4e7689e2b86, type: 3}
-  m_Color: {r: 0, g: 0.24667263, b: 1, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: aabcb9ae59fde124383a7b0cbfd2c2fe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
