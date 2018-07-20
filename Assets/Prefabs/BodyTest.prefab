@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212519379898057422}
   - component: {fileID: 61750888781693066}
   - component: {fileID: 114913625480961510}
+  - component: {fileID: 114071011996678154}
   m_Layer: 0
   m_Name: BodyTest
   m_TagString: Untagged
@@ -67,6 +68,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &114071011996678154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397183061741880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 3
+  canPick: 0
+  sprite: {fileID: 21300000, guid: bfd521a376e382e48a98f2d2b999bd0e, type: 3}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 0
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
 --- !u!114 &114913625480961510
 MonoBehaviour:
   m_ObjectHideFlags: 1
