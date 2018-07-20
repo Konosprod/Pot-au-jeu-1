@@ -29,7 +29,7 @@ public class SimpleMobBehaviour : MonoBehaviour {
             {
                 Vector3 move = ((player.transform.position - transform.position).normalized);
                 move = move * speed * Time.deltaTime;
-                Debug.Log("Move : x=" + move.x + ", y=" + move.y + ", z=" + move.z);
+                //Debug.Log("Move : x=" + move.x + ", y=" + move.y + ", z=" + move.z);
                 transform.position += move;
             }
 

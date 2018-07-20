@@ -14,7 +14,9 @@ public class ChildCollider : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         parentHP = transform.parent.gameObject.GetComponent<Health>();
-	}
+        if(parentHP == null)
+            parentHP = transform.parent.parent.gameObject.GetComponent<Health>();
+    }
 
     public void TakeDamage(int dmg)
     {
