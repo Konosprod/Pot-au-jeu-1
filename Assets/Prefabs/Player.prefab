@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
   attackTime: 0.5
   canAttack: 1
   forward: 1
@@ -548,6 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
   attackTime: 0.5
   canAttack: 1
   forward: 0
@@ -562,6 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
   attackTime: 0.5
   canAttack: 1
   forward: 0
@@ -602,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
   attackTime: 0.5
   canAttack: 1
   forward: 1
