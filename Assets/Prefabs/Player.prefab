@@ -745,6 +745,8 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212068046812145426}
+  body: {fileID: 0}
+  part: {fileID: 0}
 --- !u!114 &114018291184028064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -772,6 +774,8 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212288831370653284}
+  body: {fileID: 0}
+  part: {fileID: 0}
 --- !u!114 &114076021289780698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -833,6 +837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  quantity: 0
   partType: 2
   canPick: 0
   itemSprite: {fileID: 0}
@@ -858,6 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  quantity: 0
   partType: 1
   canPick: 0
   itemSprite: {fileID: 0}
@@ -883,6 +891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  quantity: 0
   partType: 0
   canPick: 0
   itemSprite: {fileID: 0}
@@ -911,6 +921,8 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212571872360853412}
+  body: {fileID: 0}
+  part: {fileID: 0}
 --- !u!114 &114553801609858680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -924,6 +936,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 114647209785455152, guid: ece9fd0dc40678942aeea9a631a2487a, type: 2}
+  - {fileID: 114280810110251780, guid: 295e25509e7ec2f47b02da75453c591e, type: 2}
+  - {fileID: 114071011996678154, guid: 754828bf1ff124b4292de336bc10fab2, type: 2}
+  - {fileID: 114544769514696040, guid: 8d0c36757ba86dd4f94a205c45cad21b, type: 2}
+  - {fileID: 114231034030513610, guid: a055cd8d8e494b945b74bb60ff8b36fb, type: 2}
+  - {fileID: 114779624668460988, guid: b7e599caaefaf5542b7b9791157112df, type: 2}
+  - {fileID: 114722135055144468, guid: 5115269a7df3ad147b39400e6b834708, type: 2}
 --- !u!114 &114586490859484414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -935,6 +953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  quantity: 0
   partType: 3
   canPick: 0
   itemSprite: {fileID: 0}
@@ -978,6 +998,8 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212863376277320890}
+  body: {fileID: 0}
+  part: {fileID: 0}
 --- !u!114 &114750929400184392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1002,6 +1024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  quantity: 0
   partType: 0
   canPick: 0
   itemSprite: {fileID: 0}
@@ -1053,6 +1077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  quantity: 0
   partType: 1
   canPick: 0
   itemSprite: {fileID: 0}
@@ -1094,6 +1120,8 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212091413230831132}
+  body: {fileID: 0}
+  part: {fileID: 0}
 --- !u!114 &114883491500721844
 MonoBehaviour:
   m_ObjectHideFlags: 1
