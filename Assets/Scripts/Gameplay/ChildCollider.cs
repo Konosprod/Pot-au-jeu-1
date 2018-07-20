@@ -9,10 +9,13 @@ public class ChildCollider : MonoBehaviour {
     public int atk = 10;
 
     private Health parentHP;
-        
+    private int layerLoot;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start ()
+    {
+        layerLoot = LayerMask.NameToLayer("Loot");
         parentHP = transform.parent.gameObject.GetComponent<Health>();
         if(parentHP == null)
             parentHP = transform.parent.parent.gameObject.GetComponent<Health>();
@@ -40,6 +43,23 @@ public class ChildCollider : MonoBehaviour {
             if (activeAttack)
             {
                 otherCol.TakeDamage(atk);
+            }
+        }
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(IsPlayer() && col.gameObject.layer == layerLoot)
+        {
+            BodyPart drop = col.gameObject.GetComponent<BodyPart>();
+            if (drop != null)
+            {
+                parentHP.PickupLoot(drop);
+            }
+            else
+            {
+                Debug.LogError("The drop has no bodypart script : " + col.gameObject.name);
             }
         }
     }

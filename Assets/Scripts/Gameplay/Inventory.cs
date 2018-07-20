@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
 
-    public BodyPart[] items;
+    public List<BodyPart> items = new List<BodyPart>();
 
 	// Use this for initialization
 	void Start () {
