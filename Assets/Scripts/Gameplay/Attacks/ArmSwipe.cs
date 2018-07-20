@@ -4,35 +4,39 @@ using UnityEngine;
 
 
 // Swipe your arms to attack
-public class ArmSwipe : MonoBehaviour {
-
-    private ChildCollider childCol;
-
-    public float attackTime = 0.5f;
-    public bool canAttack = true;
-
+public class ArmSwipe : Attack
+{   
     public bool forward = true;
 
-	// Use this for initialization
-	void Start () {
-        childCol = GetComponent<ChildCollider>();
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.T))
+        if (childCol.IsPlayer())
         {
-            if (canAttack)
+            if (Input.GetKey(KeyCode.T))
             {
-                StartCoroutine(Rotate(attackTime));
+                if (canAttack)
+                {
+                    UseAttack();
+                }
             }
         }
+    }
+
+    public override void UseAttack ()
+    {
+        StartCoroutine(Rotate(attackTime));
     }
 
     IEnumerator Rotate(float duration)
     {
         Quaternion defaultRot = transform.rotation;
-        transform.rotation = transform.rotation * Quaternion.AngleAxis(-45f, (forward)?Vector3.forward:Vector3.back);
+        transform.rotation = transform.rotation * Quaternion.AngleAxis(-45f, (forward) ? Vector3.forward : Vector3.back);
         Quaternion startRot = transform.rotation;
 
         childCol.activeAttack = true;

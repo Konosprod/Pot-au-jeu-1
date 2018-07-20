@@ -21,20 +21,21 @@ public class ChildCollider : MonoBehaviour {
         parentHP.TakeDamage(dmg);
     }
 
+    public bool IsPlayer()
+    {
+        return parentHP.isPlayer;
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
-        ChildCollider otherCol = col.gameObject.GetComponent<ChildCollider>();
+        //Debug.Log("OnCollisionEnter2D");
+        ChildCollider otherCol = col.collider.gameObject.GetComponent<ChildCollider>();
 
         if (otherCol != null)
         {
+            //Debug.Log("Time to hit : self.activeAtk = " + activeAttack + ", other.activeAtk = " + otherCol.activeAttack);
             // Deal damage to the other if we are active
             if (activeAttack)
-            {
-                otherCol.TakeDamage(atk);
-            }
-
-            // Take damage from the other if it is active
-            if (otherCol.activeAttack)
             {
                 otherCol.TakeDamage(atk);
             }
