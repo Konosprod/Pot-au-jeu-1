@@ -7,7 +7,7 @@ public class Health : MonoBehaviour {
 
     public bool isPlayer = false;
 
-    private int hp = 100;
+    public int hp = 100;
    
 
     public void SetHealth(int health)
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour {
             hp = 0;
             if(isPlayer)
             {
-
+                Debug.Log("You are dead.");
             }
             else
             {
