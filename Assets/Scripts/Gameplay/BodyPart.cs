@@ -20,23 +20,29 @@ public class BodyPart : MonoBehaviour {
 
     public PartType partType;
     public bool canPick;
-    public Sprite sprite;
+    public Sprite itemSprite;
 
+    [Header("Leg Values")]
     //Leg Values
     public float stamina;
     public float movementSpeed;
     public float sprintSpeed;
     public PartOrientation legOrientation;
 
+    [Header("Arm Values")]
     //Arm Values
     public float damages;
-    public float range;
+    public float range = 1f;
     public PartOrientation armOrientation;
 
+
+    [Header("Body Values")]
     //Body Values
     public float health;
     public float armor;
 
+
+    [Header("Head Values")]
     //Head Values
     public float intelligence;
     public Skill skill;

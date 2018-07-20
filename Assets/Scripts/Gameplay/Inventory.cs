@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
 
-    public GameObject[] items;
+    public BodyPart[] items;
 
 	// Use this for initialization
 	void Start () {

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212841563702054980}
   - component: {fileID: 61292691432157312}
   - component: {fileID: 114226779578671642}
+  - component: {fileID: 114436063851243322}
   m_Layer: 0
   m_Name: RightLegTest
   m_TagString: Untagged
@@ -41,7 +42,7 @@ GameObject:
   - component: {fileID: 61163536312229216}
   - component: {fileID: 114864913324537798}
   - component: {fileID: 114688998620640900}
-  - component: {fileID: 114682284141216912}
+  - component: {fileID: 114764757982584444}
   m_Layer: 0
   m_Name: RightArmTest
   m_TagString: Untagged
@@ -79,8 +80,8 @@ GameObject:
   - component: {fileID: 212324728516104552}
   - component: {fileID: 61448877572111758}
   - component: {fileID: 114983922496950382}
-  - component: {fileID: 114496632563806578}
   - component: {fileID: 114970398383359286}
+  - component: {fileID: 114437356779859618}
   m_Layer: 0
   m_Name: LeftArmTest
   m_TagString: Untagged
@@ -137,6 +138,7 @@ GameObject:
   - component: {fileID: 212190027588275578}
   - component: {fileID: 61286534673843360}
   - component: {fileID: 114976125971465266}
+  - component: {fileID: 114859595326721236}
   m_Layer: 0
   m_Name: LeftLegTest
   m_TagString: Untagged
@@ -486,7 +488,32 @@ MonoBehaviour:
   armor: 0
   intelligence: 0
   skill: {fileID: 0}
---- !u!114 &114496632563806578
+--- !u!114 &114436063851243322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200851327030876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 1
+  canPick: 0
+  sprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 1
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
+--- !u!114 &114437356779859618
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -494,12 +521,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1662884857055042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTime: 0.5
-  canAttack: 1
-  forward: 1
+  partType: 0
+  canPick: 0
+  sprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
 --- !u!114 &114553801609858680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -537,20 +575,6 @@ MonoBehaviour:
   armor: 0
   intelligence: 0
   skill: {fileID: 0}
---- !u!114 &114682284141216912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1297844862555804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackTime: 0.5
-  canAttack: 1
-  forward: 0
 --- !u!114 &114688998620640900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -562,9 +586,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
   attackTime: 0.5
   canAttack: 1
   forward: 0
+--- !u!114 &114764757982584444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297844862555804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 0
+  canPick: 0
+  sprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 1
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
 --- !u!114 &114768999212029208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -578,6 +628,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeAttack: 0
   atk: 10
+--- !u!114 &114859595326721236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773557239491680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 1
+  canPick: 0
+  sprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
 --- !u!114 &114864913324537798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -602,6 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
   attackTime: 0.5
   canAttack: 1
   forward: 1
