@@ -34,7 +34,6 @@ public class Builder : MonoBehaviour {
 
                     if(sp != null)
                     {
-                        Transform t = sp.part.transform;
                         Inventory inventory = player.GetComponent<Inventory>();
 
                         for(int i = 0; i < inventory.items.Length; i++)
@@ -42,7 +41,7 @@ public class Builder : MonoBehaviour {
                             if(inventory.items[i].GetComponent<BodyPart>().id == selectedItem)
                             {
                                 //Init
-                                GameObject part = Instantiate(inventory.items[i].gameObject, player.transform.GetChild(0).transform);
+                                GameObject part = Instantiate(inventory.items[i].gameObject, sp.transform.parent.transform);
                                 BodyPart bp = part.GetComponent<BodyPart>();
 
                                 switch(sp.type)
@@ -88,7 +87,7 @@ public class Builder : MonoBehaviour {
 
                                 //Set Position
                                 //part.transform.localRotation = t.localRotation;
-                                part.transform.position = t.position;
+                                part.transform.position = sp.transform.position;
 
                                 //Set the good flip
                                 part.GetComponent<SpriteRenderer>().flipX = sp.spriteRenderer.flipX;
