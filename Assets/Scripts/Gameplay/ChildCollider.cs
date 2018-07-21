@@ -10,12 +10,14 @@ public class ChildCollider : MonoBehaviour {
 
     private Health parentHP;
     private int layerLoot;
+    private int layerMapTrigger;
 
 
     // Use this for initialization
     void Awake ()
     {
         layerLoot = LayerMask.NameToLayer("Loot");
+        layerMapTrigger = LayerMask.NameToLayer("MapTrigger");
         parentHP = transform.parent.gameObject.GetComponent<Health>();
         if(parentHP == null)
             parentHP = GetComponentInParent<Health>();
@@ -61,6 +63,11 @@ public class ChildCollider : MonoBehaviour {
             {
                 Debug.LogError("The drop has no bodypart script : " + col.gameObject.name);
             }
+        }
+
+        if(IsPlayer() && col.gameObject.layer == layerMapTrigger)
+        {
+            GameManager._instance.ShowNextMaps();
         }
     }
 }

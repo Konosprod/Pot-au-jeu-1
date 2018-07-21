@@ -19,11 +19,12 @@ public class GameManager : MonoBehaviour {
     public MapSystem mapSystem;
     public MapSystem.Map map;
     private MobSpawn mobSpawner;
-    private List<GameObject> mobs;
+    public List<GameObject> mobs;
 
     [Header("Prefabs")]
     public GameObject playerPrefab;
     public GameObject buttonPrefab;
+    public GameObject nextMapTriggerPrefab;
     public GameObject[] prefabsRooms;
 
     [Header("Camera")]
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public int currentRoomId;
     private bool isOver = false;
+    private bool triggerSpawned = false;
+    private bool choiceShowed = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -109,6 +112,7 @@ public class GameManager : MonoBehaviour {
             fader = GameObject.FindObjectOfType<Fader>();
             camera = GameObject.Find("CM vcam1").GetComponent<Cinemachine.CinemachineVirtualCamera>();
             camera.Follow = player.transform;
+            triggerSpawned = false;
         }
         else
         {
@@ -116,6 +120,7 @@ public class GameManager : MonoBehaviour {
             player.GetComponent<PlayerController>().canMove = false;
         }
 
+        choiceShowed = false;
         player.transform.position = Vector2.zero;
     }
 
@@ -127,25 +132,30 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.N))
+        if(mobs.Count == 0 && triggerSpawned == false)
         {
-            ShowNextMaps();
-        }   
+            GameObject go = Instantiate(nextMapTriggerPrefab.gameObject);
+            go.transform.position = Vector3.zero;
+            triggerSpawned = true;
+        }
 	}
 
     public void ShowNextMaps()
     {
-        List<int> nextRoomsId = map.GetNextRooms(currentRoomId);
-
-        foreach (int id in nextRoomsId)
+        if (!choiceShowed)
         {
-            Debug.Log("From : " + currentRoomId.ToString() + " To : " + id.ToString());
-            GameObject button = Instantiate(buttonPrefab.gameObject, panel.transform);
-            button.GetComponentInChildren<Text>().text = map.GetRoom(id).roomType.ToString();
-            button.GetComponent<ButtonChoice>().id = id;
-        }
+            List<int> nextRoomsId = map.GetNextRooms(currentRoomId);
 
-        canvasUi.SetActive(true);
+            foreach (int id in nextRoomsId)
+            {
+                Debug.Log("From : " + currentRoomId.ToString() + " To : " + id.ToString());
+                GameObject button = Instantiate(buttonPrefab.gameObject, panel.transform);
+                button.GetComponentInChildren<Text>().text = map.GetRoom(id).roomType.ToString();
+                button.GetComponent<ButtonChoice>().id = id;
+            }
+            choiceShowed = true;
+            canvasUi.SetActive(true);
+        }
     }
 
     public void LoadNextScene()

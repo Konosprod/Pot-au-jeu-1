@@ -117,6 +117,7 @@ public class Health : MonoBehaviour {
                         drop.GetComponent<Collider2D>().isTrigger = true;
                         drop.gameObject.layer = layerLoot;
                     }
+                    GameManager._instance.mobs.Remove(gameObject);
                     Destroy(gameObject);
                 }
             }

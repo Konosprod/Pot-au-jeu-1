@@ -253,9 +253,12 @@ MonoBehaviour:
   fader: {fileID: 1824695330}
   canvasUi: {fileID: 143706699}
   mapSystem: {fileID: 83179797}
+  mobs: []
   playerPrefab: {fileID: 1329078947262102, guid: 692f7f78a60a6d245a0821f996e50ae2,
     type: 2}
   buttonPrefab: {fileID: 1155462351609282, guid: f964845d8c9ead34297f8e66e26f397a,
+    type: 2}
+  nextMapTriggerPrefab: {fileID: 1748941788994736, guid: 07130552360acbe4e9f9417738544e19,
     type: 2}
   prefabsRooms:
   - {fileID: 1717367404984538, guid: 38c67826de87dd44cb5ce4595455cd75, type: 2}
