@@ -5,7 +5,8 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
 
-    public BodyPart[] items;
+    public GameObject[] items;
+    public Dictionary<int, int> stock = new Dictionary<int, int>();
 
 	// Use this for initialization
 	void Start () {

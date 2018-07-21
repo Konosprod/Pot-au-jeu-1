@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   quantity: 0
-  partType: 0
+  partType: 1
   canPick: 0
   itemSprite: {fileID: 0}
   stamina: 0

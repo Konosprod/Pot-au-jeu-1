@@ -11,7 +11,7 @@ public class Builder : MonoBehaviour {
     public GameObject prefabItem;
     public GameObject prefabText;
 
-    public GameObject selectedItem = null;
+    public int selectedItem = 0;
 
 
     void Start()
@@ -28,13 +28,23 @@ public class Builder : MonoBehaviour {
 
             if (hit.collider != null)
             {
-                if(selectedItem != null)
+                if(selectedItem > 0)
                 {
                     Snappoint sp = hit.collider.GetComponent<Snappoint>();
 
                     if(sp != null)
                     {
                         Transform t = sp.part.transform;
+                        Inventory inventory = player.GetComponent<Inventory>();
+
+                        for(int i = 0; i < inventory.items.Length; i++)
+                        {
+                            if(inventory.items[i].GetComponent<BodyPart>().id == selectedItem)
+                            {
+                                Debug.Log("haz it");
+                            }
+                        }
+
                     }
                 }
             }
@@ -47,28 +57,52 @@ public class Builder : MonoBehaviour {
 
         foreach (BodyPart bp in inventory.items)
         {
-            GameObject goItem = Instantiate(prefabItem.gameObject);
-
-            InventoryItem ivItem = goItem.GetComponent<InventoryItem>();
-
-            ivItem.part = bp;
-            ivItem.image.sprite = bp.itemSprite;
-            ivItem.builder = this;
-
-            switch(bp.partType)
+            if (bp.quantity > 0)
             {
-                case PartType.Arm:
-                    {
-                        GameObject textRange = Instantiate(prefabText, ivItem.transform);
-                        textRange.GetComponent<Text>().text = "Range : " + bp.range;
+                GameObject goItem = Instantiate(prefabItem.gameObject);
 
-                        GameObject textDamage = Instantiate(prefabText, ivItem.transform);
-                        textDamage.GetComponent<Text>().text = "Damage : " + bp.damages;
-                    }
-                    break;
+                InventoryItem ivItem = goItem.GetComponent<InventoryItem>();
+
+                ivItem.image.sprite = bp.itemSprite;
+                ivItem.id = bp.id;
+                ivItem.builder = this;
+
+                switch (bp.partType)
+                {
+                    case PartType.Arm:
+                        {
+                            GameObject textRange = Instantiate(prefabText, ivItem.transform);
+                            textRange.GetComponent<Text>().text = "Range : " + bp.range;
+
+                            GameObject textDamage = Instantiate(prefabText, ivItem.transform);
+                            textDamage.GetComponent<Text>().text = "Damage : " + bp.damages;
+                        }
+                        break;
+
+                    case PartType.Leg:
+                        {
+
+                        }
+                        break;
+
+                    case PartType.Body:
+                        {
+
+                        }
+                        break;
+
+                    case PartType.Head:
+                        {
+
+                        }
+                        break;
+                }
+
+                GameObject textQty = Instantiate(prefabText, ivItem.transform);
+                textQty.GetComponent<Text>().text = "Qty : " + bp.quantity;
+
+                goItem.transform.SetParent(listItems.transform);
             }
-
-            goItem.transform.SetParent(listItems.transform);
         }
     }
 }

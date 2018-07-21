@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class InventoryItem : MonoBehaviour, IPointerClickHandler {
 
     public Image image;
-    public BodyPart part;
+    public int id;
     public Image backgroundColor;
 
     public Builder builder;
@@ -33,11 +33,11 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler {
 
         if(isSelected)
         {
-            builder.selectedItem = this.gameObject;
+            builder.selectedItem = id;
         }
         else
         {
-            builder.selectedItem = null;
+            builder.selectedItem = 0;
         }
     }
 
