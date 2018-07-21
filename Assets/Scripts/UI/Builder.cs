@@ -17,7 +17,7 @@ public class Builder : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Inventory>().stock.Add(7, 2);
+        player.GetComponent<Inventory>().stock.Add(2, 1);
         loadItems();
     }
 
@@ -42,7 +42,56 @@ public class Builder : MonoBehaviour {
                         {
                             if(inventory.items[i].GetComponent<BodyPart>().id == selectedItem)
                             {
+                                //Init
                                 GameObject part = Instantiate(inventory.items[i].gameObject, player.transform.GetChild(0).transform);
+                                BodyPart bp = part.GetComponent<BodyPart>();
+
+                                switch(sp.type)
+                                {
+                                    case SnapType.Head:
+                                        {
+                                            if(bp.partType == PartType.Arm)
+                                            {
+                                                part.transform.localEulerAngles = new Vector3(0, 0, 180);
+                                            }
+
+                                            if(bp.partType == PartType.Leg)
+                                            {
+                                                part.transform.localEulerAngles = new Vector3(0, 0, 180);
+                                            }
+                                        }
+                                        break;
+
+                                    case SnapType.Arm:
+                                        {
+                                            if(bp.partType == PartType.Head)
+                                            {
+                                                part.transform.localEulerAngles = new Vector3(0, 0, -90);
+                                            }
+                                        }
+                                        break;
+
+                                    case SnapType.Leg:
+                                        {
+                                            if(bp.partType == PartType.Head)
+                                            {
+                                                part.transform.localEulerAngles = new Vector3(0, 0, 180);
+                                            }
+                                        }
+                                        break;
+
+                                }
+
+                                //Set Position
+                                //part.transform.localRotation = t.localRotation;
+                                part.transform.position = t.position;
+
+                                //Set the good flip
+                                part.GetComponent<SpriteRenderer>().flipX = sp.spriteRenderer.flipX;
+                                part.GetComponent<SpriteRenderer>().flipY = sp.spriteRenderer.flipY;
+
+
+                                //Set out
                                 Destroy(sp.part.gameObject);
                                 sp.part = part;
                                 inventory.stock[selectedItem]--;
@@ -60,7 +109,9 @@ public class Builder : MonoBehaviour {
     {
         for(int i = 0; i < listItems.transform.childCount; i++)
         {
-            Destroy(listItems.transform.GetChild(i));
+            Transform t = listItems.transform.GetChild(i);
+            t.SetParent(null);
+            Destroy(t.gameObject);
         }
     }
 

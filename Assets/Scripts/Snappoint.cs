@@ -4,8 +4,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+public enum SnapType
+{
+    Head,
+    Arm,
+    Leg
+}
+
 public class Snappoint : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler*/ {
 
+    public SnapType type;
     public Color selectedColor;
     public Color unselectedColor;
 
