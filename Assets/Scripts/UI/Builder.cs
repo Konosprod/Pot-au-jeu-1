@@ -17,6 +17,12 @@ public class Builder : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Inventory>().stock[1] = 2;
+        player.GetComponent<Inventory>().stock[2] = 2;
+        player.GetComponent<Inventory>().stock[3] = 2;
+        player.GetComponent<Inventory>().stock[4] = 2;
+        player.GetComponent<Inventory>().stock[5] = 2;
+        player.GetComponent<Inventory>().stock[6] = 2;
         loadItems();
     }
 
@@ -68,8 +74,12 @@ public class Builder : MonoBehaviour {
                                             }
                                             if(bp.partType == PartType.Arm)
                                             {
-                                                Debug.Log(sp.transform.localEulerAngles);
                                                 part.transform.localEulerAngles = sp.transform.localEulerAngles;
+                                            }
+                                            if(bp.partType == PartType.Leg && bp.legOrientation == PartOrientation.Left)
+                                            {
+                                                part.transform.localEulerAngles = sp.transform.localEulerAngles;
+                                                //part.transform.localEulerAngles = new Vector3(0, 0, 90);
                                             }
                                         }
                                         break;
@@ -79,6 +89,11 @@ public class Builder : MonoBehaviour {
                                             if(bp.partType == PartType.Head)
                                             {
                                                 part.transform.localEulerAngles = new Vector3(0, 0, 180);
+                                            }
+
+                                            if(bp.partType == PartType.Arm && bp.armOrientation == PartOrientation.Right)
+                                            {
+                                                part.transform.localEulerAngles = new Vector3(0, 0, 0);
                                             }
                                         }
                                         break;
@@ -142,6 +157,7 @@ public class Builder : MonoBehaviour {
                     ivItem.image.sprite = bp.itemSprite;
                     ivItem.id = bp.id;
                     ivItem.builder = this;
+                    ivItem.itemName.text = bp.itemName;
 
                     switch (bp.partType)
                     {

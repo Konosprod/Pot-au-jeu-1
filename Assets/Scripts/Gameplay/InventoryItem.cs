@@ -9,6 +9,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler {
     public Image image;
     public int id;
     public Image backgroundColor;
+    public Text itemName;
 
     public Builder builder;
 

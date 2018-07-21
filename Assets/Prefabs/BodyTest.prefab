@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  itemName: Body Test
   healthRestored: 0
   quantity: 0
   partType: 3
