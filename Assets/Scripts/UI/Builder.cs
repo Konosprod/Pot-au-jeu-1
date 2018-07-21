@@ -107,6 +107,7 @@ public class Builder : MonoBehaviour {
                                 Destroy(sp.part.gameObject);
                                 sp.part = part;
                                 inventory.stock[selectedItem]--;
+                                selectedItem = 0;
                                 loadItems();
                             }
                         }
