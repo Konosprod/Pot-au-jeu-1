@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Health : MonoBehaviour {
 
     public bool isPlayer = false;
 
-    public int hp = 100;
+    public float maxHp = 100;
+    public float hp = 100;
+
+    public float maxShield = 100;
+    public float shield = 0;
+
+    public Image healthBar;
+    public Image shieldBar;
 
     private int layerLoot;
     private List<BodyPart> bodyParts;
@@ -29,10 +37,60 @@ public class Health : MonoBehaviour {
         hp = health;
     }
 
+    private void UpdateShieldBar()
+    {
+        if (shieldBar)
+        {
+            if (shield > 0)
+            {
+                shieldBar.transform.parent.gameObject.SetActive(true);
+                shieldBar.fillAmount = shield / maxShield;
+            }
+            else
+            {
+                shieldBar.transform.parent.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.fillAmount = hp / maxHp;
+    }
+
+    public void AddShield(int shield)
+    {
+        if (this.shield + shield <= maxShield)
+        {
+            if (shield == 0)
+                shieldBar.transform.parent.gameObject.SetActive(false);
+
+            this.shield += shield;
+        }
+        else
+            this.shield = maxShield;
+
+        UpdateShieldBar();
+    }
+
     public void TakeDamage(int dmg)
     {
-        hp -= dmg;
-        if(hp <= 0)
+
+        if (shield - dmg < 0)
+        {
+            float left = dmg - shield;
+            shield = 0;
+            hp -= left;
+        }
+        else
+        {
+            shield -= dmg;
+        }
+
+        UpdateShieldBar();
+        UpdateHealthBar();
+
+        if (hp <= 0)
         {
             hp = 0;
             if (!dead) // Prevents monsters from dying multiple times (and dropping more loot thna intended)
