@@ -8,8 +8,12 @@ public class Inventory : MonoBehaviour {
     public Dictionary<int, int> stock = new Dictionary<int, int>();
 
 	// Use this for initialization
-	void Start () {
-
+	void Awake () {
+        foreach(GameObject item in items)
+        {
+            BodyPart bp = item.GetComponent<BodyPart>();
+            stock.Add(bp.id, 0);
+        }
 	}
 	
 	// Update is called once per frame

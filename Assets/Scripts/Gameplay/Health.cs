@@ -55,8 +55,13 @@ public class Health : MonoBehaviour {
     {
         if(isPlayer)
         {
-            //inventory.items.Add(drop);
-            drop.gameObject.SetActive(false);
+            inventory.stock[drop.id] += 1;
+            Destroy(drop.gameObject);
+            
+            /*foreach (int id in inventory.stock.Keys)
+            {
+                Debug.Log("Key : " + id + ", stock : " + inventory.stock[id]);
+            }*/
         }
         else
         {
