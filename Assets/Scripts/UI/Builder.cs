@@ -17,12 +17,6 @@ public class Builder : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Inventory>().stock[1] = 2;
-        player.GetComponent<Inventory>().stock[2] = 2;
-        player.GetComponent<Inventory>().stock[3] = 2;
-        player.GetComponent<Inventory>().stock[4] = 2;
-        player.GetComponent<Inventory>().stock[5] = 2;
-        player.GetComponent<Inventory>().stock[6] = 2;
         loadItems();
     }
 
