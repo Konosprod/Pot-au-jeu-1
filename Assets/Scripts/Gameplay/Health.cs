@@ -87,8 +87,6 @@ public class Health : MonoBehaviour {
             shield -= dmg;
         }
 
-        UpdateShieldBar();
-        UpdateHealthBar();
 
         if (hp <= 0)
         {
@@ -113,6 +111,12 @@ public class Health : MonoBehaviour {
                 }
             }
             dead = true;
+        }
+
+        if (isPlayer)
+        {
+            UpdateShieldBar();
+            UpdateHealthBar();
         }
     }
 
