@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
     [Header("Maps")]
     public MapSystem mapSystem;
     public MapSystem.Map map;
+    private MobSpawn mobSpawner;
+    private List<GameObject> mobs;
 
     [Header("Prefabs")]
     public GameObject playerPrefab;
@@ -41,6 +43,8 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+
+        mobSpawner = GetComponent<MobSpawn>();
 	}
 
     void Start()
@@ -53,8 +57,8 @@ public class GameManager : MonoBehaviour {
             case MapSystem.RoomType.Combat:
                 {
                     Instantiate(prefabsRooms[0].gameObject);
+                    mobs = mobSpawner.SpawnMonsters(0);
                 }
-
                 break;
         }
 
@@ -73,6 +77,7 @@ public class GameManager : MonoBehaviour {
                 case MapSystem.RoomType.Combat:
                     {
                         Instantiate(prefabsRooms[0].gameObject);
+                        mobs = mobSpawner.SpawnMonsters(map.GetRoom(currentRoomId).floorLevel);
                     }
                     break;
 
