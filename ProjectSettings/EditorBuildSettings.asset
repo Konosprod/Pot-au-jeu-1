@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Building.unity
     guid: f5c1dd2ad97b4084faab9edb0bfb8d5f
   - enabled: 1
+    path: Assets/Scenes/Healing.unity
+    guid: 4724889d774ec5a4d8daeae2a41211cf
+  - enabled: 1
     path: Assets/Scenes/Tuto.unity
-    guid: d393eae200e2dcd42980efb0c347d5ff
+    guid: 10ebe2365c204d2449f15404bfbb45f2
   m_configObjects: {}

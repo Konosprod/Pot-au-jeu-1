@@ -19,6 +19,7 @@ public enum PartOrientation
 public class BodyPart : MonoBehaviour {
 
     public int id;
+    public float healthRestored;
     public int quantity;
     public PartType partType;
     public bool canPick;
