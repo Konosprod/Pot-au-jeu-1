@@ -55,7 +55,7 @@ public class Health : MonoBehaviour {
     {
         if(isPlayer)
         {
-            inventory.items.Add(drop);
+            //inventory.items.Add(drop);
             drop.gameObject.SetActive(false);
         }
         else

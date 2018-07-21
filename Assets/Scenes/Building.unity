@@ -1057,7 +1057,7 @@ MonoBehaviour:
   player: {fileID: 0}
   prefabItem: {fileID: 1739157462656154, guid: 6f8e92fda210bd345a576b244b005dc9, type: 2}
   prefabText: {fileID: 1399485089495856, guid: a8829fda38542314c9c5c421d9c91641, type: 2}
-  selectedItem: {fileID: 0}
+  selectedItem: 0
 --- !u!1 &2027870094
 GameObject:
   m_ObjectHideFlags: 0

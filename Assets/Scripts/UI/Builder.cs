@@ -17,6 +17,7 @@ public class Builder : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Inventory>().stock.Add(7, 2);
         loadItems();
     }
 
@@ -41,7 +42,11 @@ public class Builder : MonoBehaviour {
                         {
                             if(inventory.items[i].GetComponent<BodyPart>().id == selectedItem)
                             {
-                                Debug.Log("haz it");
+                                GameObject part = Instantiate(inventory.items[i].gameObject, player.transform.GetChild(0).transform);
+                                Destroy(sp.part.gameObject);
+                                sp.part = part;
+                                inventory.stock[selectedItem]--;
+                                loadItems();
                             }
                         }
 
@@ -51,57 +56,72 @@ public class Builder : MonoBehaviour {
         }
     }
 
+    private void CleanItems()
+    {
+        for(int i = 0; i < listItems.transform.childCount; i++)
+        {
+            Destroy(listItems.transform.GetChild(i));
+        }
+    }
+
     private void loadItems()
     {
+        CleanItems();
         Inventory inventory = player.GetComponent<Inventory>();
 
-        foreach (BodyPart bp in inventory.items)
+        foreach (GameObject go in inventory.items)
         {
-            if (bp.quantity > 0)
+            BodyPart bp = go.GetComponent<BodyPart>();
+
+            if (inventory.stock.ContainsKey(bp.id))
             {
-                GameObject goItem = Instantiate(prefabItem.gameObject);
 
-                InventoryItem ivItem = goItem.GetComponent<InventoryItem>();
-
-                ivItem.image.sprite = bp.itemSprite;
-                ivItem.id = bp.id;
-                ivItem.builder = this;
-
-                switch (bp.partType)
+                if (inventory.stock[bp.id] > 0)
                 {
-                    case PartType.Arm:
-                        {
-                            GameObject textRange = Instantiate(prefabText, ivItem.transform);
-                            textRange.GetComponent<Text>().text = "Range : " + bp.range;
+                    GameObject goItem = Instantiate(prefabItem.gameObject);
 
-                            GameObject textDamage = Instantiate(prefabText, ivItem.transform);
-                            textDamage.GetComponent<Text>().text = "Damage : " + bp.damages;
-                        }
-                        break;
+                    InventoryItem ivItem = goItem.GetComponent<InventoryItem>();
 
-                    case PartType.Leg:
-                        {
+                    ivItem.image.sprite = bp.itemSprite;
+                    ivItem.id = bp.id;
+                    ivItem.builder = this;
 
-                        }
-                        break;
+                    switch (bp.partType)
+                    {
+                        case PartType.Arm:
+                            {
+                                GameObject textRange = Instantiate(prefabText, ivItem.transform);
+                                textRange.GetComponent<Text>().text = "Range : " + bp.range;
 
-                    case PartType.Body:
-                        {
+                                GameObject textDamage = Instantiate(prefabText, ivItem.transform);
+                                textDamage.GetComponent<Text>().text = "Damage : " + bp.damages;
+                            }
+                            break;
 
-                        }
-                        break;
+                        case PartType.Leg:
+                            {
 
-                    case PartType.Head:
-                        {
+                            }
+                            break;
 
-                        }
-                        break;
+                        case PartType.Body:
+                            {
+
+                            }
+                            break;
+
+                        case PartType.Head:
+                            {
+
+                            }
+                            break;
+                    }
+
+                    GameObject textQty = Instantiate(prefabText, ivItem.transform);
+                    textQty.GetComponent<Text>().text = "Qty : " + inventory.stock[bp.id];
+
+                    goItem.transform.SetParent(listItems.transform);
                 }
-
-                GameObject textQty = Instantiate(prefabText, ivItem.transform);
-                textQty.GetComponent<Text>().text = "Qty : " + bp.quantity;
-
-                goItem.transform.SetParent(listItems.transform);
             }
         }
     }
