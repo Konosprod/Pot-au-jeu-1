@@ -13,12 +13,12 @@ public class ChildCollider : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
         layerLoot = LayerMask.NameToLayer("Loot");
         parentHP = transform.parent.gameObject.GetComponent<Health>();
         if(parentHP == null)
-            parentHP = transform.parent.parent.gameObject.GetComponent<Health>();
+            parentHP = GetComponentInParent<Health>();
     }
 
     public void TakeDamage(int dmg)
@@ -28,7 +28,7 @@ public class ChildCollider : MonoBehaviour {
 
     public bool IsPlayer()
     {
-        return parentHP.isPlayer;
+        return GetComponentInParent<Health>().isPlayer;
     }
 
     void OnCollisionEnter2D(Collision2D col)

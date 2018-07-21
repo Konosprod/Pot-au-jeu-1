@@ -45,6 +45,19 @@ public class MapSystem : MonoBehaviour
             links.Add(new Link(src, trgt));
         }
 
+        public Room GetRoom(int roomId)
+        {
+            for(int i = 0; i < rooms.Count; i++)
+            {
+                if(rooms[i].id == roomId)
+                {
+                    return rooms[i];
+                }
+            }
+
+            return new Room();
+        }
+
         // Get all rooms connected forward to the one given in parameter
         public List<int> GetNextRooms(int roomId)
         {
@@ -207,13 +220,13 @@ public class MapSystem : MonoBehaviour
 
 
         // Debug info
-        map.DebugNbRoomTypes();
+        //map.DebugNbRoomTypes();
 
         return map;
     }
 
     void Start()
     {
-        GenerateMap(10);
+        
     }
 }

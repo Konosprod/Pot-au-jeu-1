@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 50685694295974764}
   - component: {fileID: 114018291184028064}
   - component: {fileID: 114553801609858680}
+  - component: {fileID: 114253239968539632}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -912,7 +913,7 @@ MonoBehaviour:
   maxShield: 100
   shield: 0
   healthBar: {fileID: 114829031449233056}
-  shieldBar: {fileID: 0}
+  shieldBar: {fileID: 114965552246686620}
 --- !u!114 &114061851170507028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -970,6 +971,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeAttack: 0
   atk: 10
+--- !u!114 &114253239968539632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329078947262102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0996cf7db78950449d16367890367af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyOnLoad: 0
 --- !u!114 &114309567636680586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1022,6 +1035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  healthRestored: 0
   quantity: 0
   partType: 2
   canPick: 0
@@ -1076,6 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  healthRestored: 0
   quantity: 0
   partType: 1
   canPick: 0
@@ -1103,6 +1118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  healthRestored: 0
   quantity: 0
   partType: 0
   canPick: 0
@@ -1193,6 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  healthRestored: 0
   quantity: 0
   partType: 3
   canPick: 0
@@ -1273,6 +1290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  healthRestored: 0
   quantity: 0
   partType: 0
   canPick: 0
@@ -1340,6 +1358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  healthRestored: 0
   quantity: 0
   partType: 1
   canPick: 0

@@ -61,7 +61,7 @@ public class Fader : MonoBehaviour
             yield return null;
         }
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
     }
 
     private IEnumerator fadeIntro()
