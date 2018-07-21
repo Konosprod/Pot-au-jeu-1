@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour {
     private bool triggerSpawned = false;
     private bool choiceShowed = false;
 
+    private int roomCount = 0;
+
 	// Use this for initialization
 	void Awake () {
         if (_instance == null)
@@ -120,6 +122,8 @@ public class GameManager : MonoBehaviour {
             player.GetComponent<PlayerController>().canMove = false;
         }
 
+        roomCount++;
+        Debug.Log(roomCount);
         choiceShowed = false;
         player.transform.position = Vector2.zero;
     }
@@ -132,10 +136,16 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(mobs.Count == 0 && triggerSpawned == false)
+        if(mobs.Count == 0 && triggerSpawned == false && roomCount < 10)
         {
             GameObject go = Instantiate(nextMapTriggerPrefab.gameObject);
             go.transform.position = Vector3.zero;
+            triggerSpawned = true;
+        }
+
+        if (roomCount == 10 && mobs.Count == 0 && triggerSpawned == false)
+        {
+            Debug.Log("Victory");
             triggerSpawned = true;
         }
 	}
@@ -148,7 +158,6 @@ public class GameManager : MonoBehaviour {
 
             foreach (int id in nextRoomsId)
             {
-                Debug.Log("From : " + currentRoomId.ToString() + " To : " + id.ToString());
                 GameObject button = Instantiate(buttonPrefab.gameObject, panel.transform);
                 button.GetComponentInChildren<Text>().text = map.GetRoom(id).roomType.ToString();
                 button.GetComponent<ButtonChoice>().id = id;
