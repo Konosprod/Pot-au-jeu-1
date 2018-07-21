@@ -17,6 +17,8 @@ public class Fader : MonoBehaviour
     private int currentSlide = 0;
     private float elaspedTime;
 
+    public Image ownFade;
+
     // Use this for initialization
     void Start()
     {
@@ -26,7 +28,45 @@ public class Fader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentSlide < slides.Length)
+
+    }
+
+    public void StartFadetoScene(string name)
+    {
+        StartCoroutine(FadeToScene(name));
+    }
+
+    public void StartIntro()
+    {
+        StartCoroutine(fadeIntro());
+    }
+
+    private IEnumerator FadeToScene(string sceneName)
+    {
+        elaspedTime = 0;
+        ownFade.gameObject.SetActive(true);
+
+        while (elaspedTime < fadeTime)
+        {
+            /*
+                float percentage = elaspedTime / fadeTime;
+                ownFade.color = new Color(toFade.color.r, toFade.color.g, toFade.color.b, Mathf.Lerp(1, 0, percentage));
+            */
+            float percentage = elaspedTime / fadeTime;
+            ownFade.color = new Color(ownFade.color.r, ownFade.color.g, ownFade.color.b, Mathf.Lerp(0, 01, percentage));
+
+
+            elaspedTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
+
+    private IEnumerator fadeIntro()
+    {
+        while (currentSlide < slides.Length)
         {
             if (elaspedTime >= fadeTime)
             {
@@ -65,10 +105,10 @@ public class Fader : MonoBehaviour
                 slides[currentSlide].gameObject.SetActive(false);
                 currentSlide++;
             }
+
+            yield return null;
         }
-        else
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-        }
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }

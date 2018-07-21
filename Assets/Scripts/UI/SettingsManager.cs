@@ -104,6 +104,7 @@ public class SettingsManager : MonoBehaviour
             dropdownResolutions.value = GetResolutionIndex();
             sliderVolumeBGM.value = 1f;
             sliderVolumeSFX.value = 1f;
+            gameSettings.firstRun = true;
         }
     }
 
