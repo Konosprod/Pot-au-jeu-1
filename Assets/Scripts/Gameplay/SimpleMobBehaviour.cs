@@ -12,10 +12,15 @@ public class SimpleMobBehaviour : MonoBehaviour {
     private float distanceToPlayer;
 
 	// Use this for initialization
-	void Awake () {
-        player = GameObject.FindGameObjectWithTag("Player");
+	void Awake ()
+    {
 		attacks = new List<Attack>(GetComponentsInChildren<Attack>());
 	}
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 	
 	// Update is called once per frame
 	void Update () {

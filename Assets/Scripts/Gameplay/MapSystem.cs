@@ -110,14 +110,16 @@ public class MapSystem : MonoBehaviour
     }
     public struct Room
     {
-        public Room(RoomType rt) // Must use this constructor to get a unique ID for each room
+        public Room(RoomType rt, int floor) // Must use this constructor to get a unique ID for each room
         {
             id = _id++;
             roomType = rt;
+            floorLevel = floor;
         }
 
         public int id;
         public RoomType roomType;
+        public int floorLevel;
     }
 
     // A link goes from a room to another based on the ID
@@ -166,7 +168,7 @@ public class MapSystem : MonoBehaviour
     public Map GenerateMap(int maxFloors, int maxWidth = 3)
     {
         // Always start with a combat room
-        Room start = new Room(RoomType.Combat);
+        Room start = new Room(RoomType.Combat, 0);
 
         // Use custom initializer
         Map map = new Map(start);
@@ -185,7 +187,7 @@ public class MapSystem : MonoBehaviour
             for(int i=0; i<nbRoomsNextFloor; i++)
             {
                 RoomType newRT = GenerateRandomRoomType(); // The type of the new room
-                Room newRoom = new Room(newRT);
+                Room newRoom = new Room(newRT, currentFloor);
 
                 map.AddRoom(newRoom);
                 roomsOnNextFloor.Add(newRoom.id);
@@ -210,7 +212,7 @@ public class MapSystem : MonoBehaviour
             currentFloor++;
         }
 
-        Room bossRoom = new Room(RoomType.Boss);
+        Room bossRoom = new Room(RoomType.Boss, maxFloors);
         map.AddRoom(bossRoom);
         foreach (int currMap in roomsOnCurrentFloor)
         {

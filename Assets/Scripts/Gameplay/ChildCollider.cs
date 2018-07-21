@@ -28,7 +28,7 @@ public class ChildCollider : MonoBehaviour {
 
     public bool IsPlayer()
     {
-        return GetComponentInParent<Health>().isPlayer;
+        return parentHP.isPlayer;
     }
 
     void OnCollisionEnter2D(Collision2D col)
