@@ -254,8 +254,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 10
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 6
+  itemName: 
   healthRestored: 0
   quantity: 0
   partType: 0
@@ -453,6 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  itemName: 
   healthRestored: 0
   quantity: 0
   partType: 3
@@ -560,6 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
+  itemName: 
   healthRestored: 0
   quantity: 0
   partType: 3
@@ -588,6 +591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
+  itemName: 
   healthRestored: 0
   quantity: 0
   partType: 0
@@ -647,6 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 5
+  itemName: 
   healthRestored: 0
   quantity: 0
   partType: 0
@@ -717,6 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4
+  itemName: 
   healthRestored: 0
   quantity: 0
   partType: 1
