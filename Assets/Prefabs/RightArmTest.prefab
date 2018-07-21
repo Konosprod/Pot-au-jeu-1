@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61424436492494796}
   - component: {fileID: 114875199278095526}
   - component: {fileID: 114779624668460988}
+  - component: {fileID: 114102797976332656}
   m_Layer: 0
   m_Name: RightArmTest
   m_TagString: Untagged
@@ -68,6 +69,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &114102797976332656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1592472820105784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
+  attackTime: 0.5
+  canAttack: 1
+  forward: 0
 --- !u!114 &114779624668460988
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61926219256011062}
   - component: {fileID: 114645891097670474}
   - component: {fileID: 114759210927411370}
+  - component: {fileID: 114496950987885920}
   m_Layer: 0
   m_Name: LeftArmTest
   m_TagString: Untagged
@@ -98,6 +99,7 @@ GameObject:
   - component: {fileID: 61313078902824250}
   - component: {fileID: 114720742714382468}
   - component: {fileID: 114788408057992222}
+  - component: {fileID: 114915859489516216}
   m_Layer: 0
   m_Name: RightArmTest
   m_TagString: Untagged
@@ -464,6 +466,21 @@ MonoBehaviour:
   armor: 0
   intelligence: 0
   skill: {fileID: 0}
+--- !u!114 &114496950987885920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1045638348799788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
+  attackTime: 0.5
+  canAttack: 1
+  forward: 1
 --- !u!114 &114569859973785762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -648,6 +665,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeAttack: 0
   atk: 10
+--- !u!114 &114915859489516216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621459683323146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
+  attackTime: 0.5
+  canAttack: 1
+  forward: 0
 --- !u!114 &114978747949555150
 MonoBehaviour:
   m_ObjectHideFlags: 1
