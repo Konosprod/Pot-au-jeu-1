@@ -32,9 +32,19 @@ public class Health : MonoBehaviour {
             inventory = GetComponent<Inventory>();
     }
 
-    public void SetHealth(int health)
+    public void SetMaxHealth(float maxHealth)
     {
-        hp = health;
+        float ratio = hp / maxHp;
+        maxHp = maxHealth;
+        hp = maxHp * ratio;
+    }
+
+    public void SetHealth(float health)
+    {
+        if (health <= hp)
+            hp = health;
+        else
+            hp = maxHp;
     }
 
     private void UpdateShieldBar()
