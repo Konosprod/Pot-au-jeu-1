@@ -13,6 +13,8 @@ public class Health : MonoBehaviour {
     private List<BodyPart> bodyParts;
     private Inventory inventory;
 
+    private bool dead = false;
+
     void Awake()
     {
         layerLoot = LayerMask.NameToLayer("Loot");
@@ -33,21 +35,26 @@ public class Health : MonoBehaviour {
         if(hp <= 0)
         {
             hp = 0;
-            if(isPlayer)
+            if (!dead) // Prevents monsters from dying multiple times (and dropping more loot thna intended)
             {
-                Debug.Log("You are dead.");
-            }
-            else
-            {
-                if(Random.Range(1, 100) < 100)
+                if (isPlayer)
                 {
-                    BodyPart drop = bodyParts[Random.Range(0, bodyParts.Count)];
-                    drop.transform.parent = null;
-                    drop.GetComponent<Collider2D>().isTrigger = true;
-                    drop.gameObject.layer = layerLoot;
+                    Debug.Log("You are dead.");
+                    GameManager._instance.LoseTheGame();
                 }
-                Destroy(gameObject);
+                else
+                {
+                    if (Random.Range(1, 100) < 100)
+                    {
+                        BodyPart drop = bodyParts[Random.Range(0, bodyParts.Count)];
+                        drop.transform.parent = null;
+                        drop.GetComponent<Collider2D>().isTrigger = true;
+                        drop.gameObject.layer = layerLoot;
+                    }
+                    Destroy(gameObject);
+                }
             }
+            dead = true;
         }
     }
 

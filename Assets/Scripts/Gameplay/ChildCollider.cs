@@ -36,7 +36,7 @@ public class ChildCollider : MonoBehaviour {
         //Debug.Log("OnCollisionEnter2D");
         ChildCollider otherCol = col.collider.gameObject.GetComponent<ChildCollider>();
 
-        if (otherCol != null)
+        if (otherCol != null && (IsPlayer() || otherCol.IsPlayer()))
         {
             //Debug.Log("Time to hit : self.activeAtk = " + activeAttack + ", other.activeAtk = " + otherCol.activeAttack);
             // Deal damage to the other if we are active
