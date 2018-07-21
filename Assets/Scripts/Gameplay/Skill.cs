@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour {
 
+    public string skillName = "";
+
 	// Use this for initialization
 	void Start () {
 		

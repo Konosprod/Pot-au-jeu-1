@@ -17,7 +17,7 @@ public class Builder : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Inventory>().stock.Add(2, 1);
+        player.GetComponent<Inventory>().stock[2] = 2;
         loadItems();
     }
 
@@ -151,19 +151,34 @@ public class Builder : MonoBehaviour {
 
                         case PartType.Leg:
                             {
+                                GameObject textRange = Instantiate(prefabText, ivItem.transform);
+                                textRange.GetComponent<Text>().text = "Stamina : " + bp.stamina;
 
+                                GameObject textDamage = Instantiate(prefabText, ivItem.transform);
+                                textDamage.GetComponent<Text>().text = "Movement Speed : " + bp.movementSpeed;
+
+                                textDamage = Instantiate(prefabText, ivItem.transform);
+                                textDamage.GetComponent<Text>().text = "Sprint Speed : " + bp.sprintSpeed;
                             }
                             break;
 
                         case PartType.Body:
                             {
+                                GameObject textRange = Instantiate(prefabText, ivItem.transform);
+                                textRange.GetComponent<Text>().text = "HP : " + bp.health;
 
+                                GameObject textDamage = Instantiate(prefabText, ivItem.transform);
+                                textDamage.GetComponent<Text>().text = "Armor : " + bp.armor;
                             }
                             break;
 
                         case PartType.Head:
                             {
+                                GameObject textRange = Instantiate(prefabText, ivItem.transform);
+                                textRange.GetComponent<Text>().text = "Intel : " + bp.intelligence;
 
+                                GameObject textDamage = Instantiate(prefabText, ivItem.transform);
+                                //textDamage.GetComponent<Text>().text = "Skill : " + bp.skill.skillName;
                             }
                             break;
                     }
