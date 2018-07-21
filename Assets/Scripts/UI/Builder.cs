@@ -69,6 +69,11 @@ public class Builder : MonoBehaviour {
                                             {
                                                 part.transform.localEulerAngles = new Vector3(0, 0, -90);
                                             }
+                                            if(bp.partType == PartType.Arm)
+                                            {
+                                                Debug.Log(sp.transform.localEulerAngles);
+                                                part.transform.localEulerAngles = sp.transform.localEulerAngles;
+                                            }
                                         }
                                         break;
 
@@ -106,13 +111,16 @@ public class Builder : MonoBehaviour {
         }
     }
 
+    public void ExitToGame()
+    {
+        GameManager._instance.ShowNextMaps();
+    }
+
     private void CleanItems()
     {
-        for(int i = 0; i < listItems.transform.childCount; i++)
+        foreach (Transform child in listItems.transform)
         {
-            Transform t = listItems.transform.GetChild(i);
-            t.SetParent(null);
-            Destroy(t.gameObject);
+            GameObject.Destroy(child.gameObject);
         }
     }
 

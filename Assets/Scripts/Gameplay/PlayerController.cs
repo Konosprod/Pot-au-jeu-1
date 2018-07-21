@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isSprinting = false;
     public Image staminaBar;
     private float currentStamina = _stamina;
+    public bool canMove = true;
 
     // Player stats
     // Defaults
@@ -44,36 +45,39 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if (canMove)
         {
-            isSprinting = true;
-        }
-        if(Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            isSprinting = false;
-        }
-
-        if(isSprinting)
-        {
-            currentStamina -= staminaConsumption * Time.deltaTime;
-            if(currentStamina < 0f)
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                isSprinting = true;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 isSprinting = false;
             }
-        }
-        else
-        {
-            if(currentStamina < stamina)
+
+            if (isSprinting)
             {
-                currentStamina += staminaRegen * Time.deltaTime;
-                if(currentStamina > stamina)
+                currentStamina -= staminaConsumption * Time.deltaTime;
+                if (currentStamina < 0f)
                 {
-                    currentStamina = stamina;
+                    isSprinting = false;
                 }
             }
-        }
+            else
+            {
+                if (currentStamina < stamina)
+                {
+                    currentStamina += staminaRegen * Time.deltaTime;
+                    if (currentStamina > stamina)
+                    {
+                        currentStamina = stamina;
+                    }
+                }
+            }
 
-        UpdateStaminaBar();
+            UpdateStaminaBar();
+        }
     }
 
     private void UpdateStaminaBar()

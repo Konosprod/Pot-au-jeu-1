@@ -956,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf58fc11ac8b89479417b2d86d92ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212068046812145426}
@@ -1090,6 +1090,7 @@ MonoBehaviour:
   staminaConsumption: 10
   staminaRegen: 5
   staminaBar: {fileID: 114829031449233056}
+  canMove: 1
 --- !u!114 &114321622930403962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1268,7 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf58fc11ac8b89479417b2d86d92ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212571872360853412}
@@ -1395,7 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf58fc11ac8b89479417b2d86d92ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212863376277320890}
@@ -1548,7 +1549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf58fc11ac8b89479417b2d86d92ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212091413230831132}

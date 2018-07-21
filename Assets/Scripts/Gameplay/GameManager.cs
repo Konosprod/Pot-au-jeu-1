@@ -99,11 +99,19 @@ public class GameManager : MonoBehaviour {
                     break;
             }
 
-            player = GameObject.FindGameObjectWithTag("Player");
+            //player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<PlayerController>().canMove = true;
             fader = GameObject.FindObjectOfType<Fader>();
             camera = GameObject.Find("CM vcam1").GetComponent<Cinemachine.CinemachineVirtualCamera>();
             camera.Follow = player.transform;
         }
+        else
+        {
+            fader = GameObject.FindObjectOfType<Fader>();
+            player.GetComponent<PlayerController>().canMove = false;
+        }
+
+        player.transform.position = Vector2.zero;
     }
 
     // The player died RIP
@@ -116,19 +124,24 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.N))
         {
-            List<int> nextRoomsId = map.GetNextRooms(currentRoomId);
-
-            foreach(int id in nextRoomsId)
-            {
-                Debug.Log("From : " + currentRoomId.ToString() + " To : " + id.ToString());
-                GameObject button = Instantiate(buttonPrefab.gameObject, panel.transform);
-                button.GetComponentInChildren<Text>().text = map.GetRoom(id).roomType.ToString();
-                button.GetComponent<ButtonChoice>().id = id;
-            }
-
-            canvasUi.SetActive(true);
+            ShowNextMaps();
         }   
 	}
+
+    public void ShowNextMaps()
+    {
+        List<int> nextRoomsId = map.GetNextRooms(currentRoomId);
+
+        foreach (int id in nextRoomsId)
+        {
+            Debug.Log("From : " + currentRoomId.ToString() + " To : " + id.ToString());
+            GameObject button = Instantiate(buttonPrefab.gameObject, panel.transform);
+            button.GetComponentInChildren<Text>().text = map.GetRoom(id).roomType.ToString();
+            button.GetComponent<ButtonChoice>().id = id;
+        }
+
+        canvasUi.SetActive(true);
+    }
 
     public void LoadNextScene()
     {
