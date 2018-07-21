@@ -17,6 +17,8 @@ public class Health : MonoBehaviour {
     public Image healthBar;
     public Image shieldBar;
 
+    public GameObject bloodSplashPrefab;
+
     private int layerLoot;
     private List<BodyPart> bodyParts;
     private Inventory inventory;
@@ -118,6 +120,8 @@ public class Health : MonoBehaviour {
                         drop.gameObject.layer = layerLoot;
                     }
                     GameManager._instance.mobs.Remove(gameObject);
+                    GameObject bs = Instantiate(bloodSplashPrefab, transform.position, Quaternion.identity);
+                    Destroy(bs, 1f);
                     Destroy(gameObject);
                 }
             }
