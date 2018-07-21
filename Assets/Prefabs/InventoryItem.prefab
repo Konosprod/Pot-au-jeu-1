@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114741787958780580}
   part: {fileID: 0}
+  backgroundColor: {fileID: 114268944168262374}
 --- !u!114 &114268944168262374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.547}
+  m_Color: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 15
     m_Right: 0
-    m_Top: 0
+    m_Top: 15
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 15
