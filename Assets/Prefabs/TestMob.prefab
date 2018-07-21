@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212423387490097344}
   - component: {fileID: 61890322648920412}
   - component: {fileID: 114112227637705370}
+  - component: {fileID: 114795652429625354}
   m_Layer: 0
   m_Name: BodyTest
   m_TagString: Untagged
@@ -58,6 +59,7 @@ GameObject:
   - component: {fileID: 212962299243607756}
   - component: {fileID: 61193969519963574}
   - component: {fileID: 114464580879538646}
+  - component: {fileID: 114759407499768790}
   m_Layer: 0
   m_Name: RightLegTest
   m_TagString: Untagged
@@ -77,6 +79,7 @@ GameObject:
   - component: {fileID: 61299823777199290}
   - component: {fileID: 114419033241574794}
   - component: {fileID: 114418619170286962}
+  - component: {fileID: 114997957280691098}
   m_Layer: 0
   m_Name: RightArmTest
   m_TagString: Untagged
@@ -95,6 +98,7 @@ GameObject:
   - component: {fileID: 212366591501255720}
   - component: {fileID: 61202689087750214}
   - component: {fileID: 114188228689145208}
+  - component: {fileID: 114701981500446798}
   m_Layer: 0
   m_Name: LeftLegTest
   m_TagString: Untagged
@@ -113,6 +117,7 @@ GameObject:
   - component: {fileID: 212444253282788220}
   - component: {fileID: 61648359222217790}
   - component: {fileID: 114425882714878744}
+  - component: {fileID: 114839995540974226}
   m_Layer: 0
   m_Name: HeadTest
   m_TagString: Untagged
@@ -132,6 +137,7 @@ GameObject:
   - component: {fileID: 61236789893581972}
   - component: {fileID: 114542362082039334}
   - component: {fileID: 114190366016379786}
+  - component: {fileID: 114547102442267466}
   m_Layer: 0
   m_Name: LeftArmTest
   m_TagString: Untagged
@@ -539,6 +545,156 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeAttack: 0
   atk: 10
+--- !u!114 &114547102442267466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709003380069150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 0
+  canPick: 0
+  itemSprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
+--- !u!114 &114701981500446798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594533957373248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 1
+  canPick: 0
+  itemSprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
+--- !u!114 &114759407499768790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495926042903210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 1
+  canPick: 0
+  itemSprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
+--- !u!114 &114795652429625354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274766873444168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 2
+  canPick: 0
+  itemSprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
+--- !u!114 &114839995540974226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690307978604246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 3
+  canPick: 0
+  itemSprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
+--- !u!114 &114997957280691098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530821828536910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5715482911b74e4ab1f22bfb82c9953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 0
+  canPick: 0
+  itemSprite: {fileID: 0}
+  stamina: 0
+  movementSpeed: 0
+  sprintSpeed: 0
+  legOrientation: 0
+  damages: 0
+  range: 1
+  armOrientation: 0
+  health: 0
+  armor: 0
+  intelligence: 0
+  skill: {fileID: 0}
 --- !u!212 &212193726915754556
 SpriteRenderer:
   m_ObjectHideFlags: 1
