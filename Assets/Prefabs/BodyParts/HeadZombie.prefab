@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61045137082240358}
   - component: {fileID: 114077098212682572}
   - component: {fileID: 114635731536828782}
+  - component: {fileID: 114430640436079310}
   m_Layer: 0
   m_Name: HeadZombie
   m_TagString: Untagged
@@ -81,6 +82,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeAttack: 0
   atk: 10
+--- !u!114 &114430640436079310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299700062831296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0e365b40091e8439cf5c05d406de06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
+  attackTime: 3
+  canAttack: 1
+  vomitParticle: {fileID: 1914542612499436, guid: 075e3a1c60dbfdb4b8598becd73d09d1,
+    type: 2}
+  damage: 4
 --- !u!114 &114635731536828782
 MonoBehaviour:
   m_ObjectHideFlags: 1
