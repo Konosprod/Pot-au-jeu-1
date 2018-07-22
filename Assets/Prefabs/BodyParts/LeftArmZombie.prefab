@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61621186188391312}
   - component: {fileID: 114647209785455152}
   m_Layer: 0
-  m_Name: ZombieLeftArm
+  m_Name: LeftArmZombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
