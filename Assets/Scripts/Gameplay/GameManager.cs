@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
                 case MapSystem.RoomType.Combat:
                     {
                         Instantiate(prefabsRooms[0].gameObject);
+                        mobSpawner.canvasTransf = GameObject.Find("MainCanvas").transform;
                         mobs = mobSpawner.SpawnMonsters(map.GetRoom(currentRoomId).floorLevel);
                     }
                     break;
