@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         {
             case MapSystem.RoomType.Combat:
                 {
+                    SoundManager._instance.PlayMusic(SoundType.Fight);
                     Instantiate(prefabsRooms[0].gameObject);
                     mobs = mobSpawner.SpawnMonsters(0);
                 }
