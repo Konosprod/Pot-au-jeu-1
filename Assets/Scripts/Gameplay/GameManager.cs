@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         {
             case MapSystem.RoomType.Combat:
                 {
+                    SoundManager._instance.PlayMusic(SoundType.Fight);
                     Instantiate(prefabsRooms[0].gameObject);
                     mobs = mobSpawner.SpawnMonsters(0);
                 }
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
             {
                 case MapSystem.RoomType.Combat:
                     {
+                        SoundManager._instance.PlayMusic(SoundType.Fight);
                         Instantiate(prefabsRooms[0].gameObject);
                         mobSpawner.canvasTransf = GameObject.Find("MainCanvas").transform;
                         mobs = mobSpawner.SpawnMonsters(map.GetRoom(currentRoomId).floorLevel);
@@ -97,6 +99,7 @@ public class GameManager : MonoBehaviour
 
                 case MapSystem.RoomType.Heal:
                     {
+                        SoundManager._instance.PlayMusic(SoundType.Calm);
                         Instantiate(prefabsRooms[1].gameObject);
                         player.GetComponent<Health>().Heal(player.GetComponent<Health>().maxHp / 2);
                         ShowNotification("Vous avez ete soigne...", 2f);
@@ -105,6 +108,7 @@ public class GameManager : MonoBehaviour
 
                 case MapSystem.RoomType.Chest:
                     {
+                        SoundManager._instance.PlayMusic(SoundType.Calm);
                         Instantiate(prefabsRooms[2].gameObject);
                         ShowNotification("Vous sentez la richesse non loin...", 2f);
                     }
@@ -112,6 +116,7 @@ public class GameManager : MonoBehaviour
 
                 case MapSystem.RoomType.Boss:
                     {
+                        SoundManager._instance.PlayMusic(SoundType.Boss);
                         Instantiate(prefabsRooms[3].gameObject);
                     }
                     break;
@@ -137,6 +142,7 @@ public class GameManager : MonoBehaviour
         }
         else if(scene.name == "Building")
         {
+            SoundManager._instance.PlayMusic(SoundType.Calm);
             fader = GameObject.FindObjectOfType<Fader>();
             player.GetComponent<PlayerController>().canMove = false;
         }

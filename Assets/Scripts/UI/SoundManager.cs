@@ -7,8 +7,10 @@ using UnityEngine.Audio;
 public enum SoundType
 {
     None,
-    Game,
-    Building
+    Home,
+    Calm,
+    Fight,
+    Boss
 };
 
 public enum SFXType
