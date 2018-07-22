@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     private bool choiceShowed = false;
 
     private int roomCount = 0;
-    private int nbFloor = 10;
+    private int nbFloor = 1;
 
     // Use this for initialization
     void Awake()
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneChanged;
-        map = mapSystem.GenerateMap(nbFloor);
+        map = mapSystem.GenerateMap(nbFloor,4);
 
         switch (map.rooms[0].roomType)
         {
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
                     {
                         SoundManager._instance.PlayMusic(SoundType.Boss);
                         Instantiate(prefabsRooms[3].gameObject);
-                        Instantiate(bossPrefab);
+                        mobs.Add(Instantiate(bossPrefab, new Vector2(8,0), Quaternion.identity));
                     }
                     break;
 
@@ -168,7 +168,10 @@ public class GameManager : MonoBehaviour
 
         roomCount++;
         choiceShowed = false;
-        player.transform.position = Vector2.zero;
+        if (map.GetRoom(currentRoomId).roomType == MapSystem.RoomType.Boss)
+            player.transform.position = new Vector2(-8, 0);
+        else
+            player.transform.position = Vector2.zero;
     }
 
     // The player died RIP
