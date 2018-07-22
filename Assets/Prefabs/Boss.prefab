@@ -1488,8 +1488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  maxHp: 100
-  hp: 100
+  maxHp: 150
+  hp: 150
   maxShield: 100
   shield: 0
   healthBar: {fileID: 0}
@@ -1769,7 +1769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531707cc9fbe2dd4fa86d046ed7bc304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.3
+  speed: 4.2
 --- !u!114 &114748502574558938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1870,6 +1870,7 @@ MonoBehaviour:
   monsterPrefab: {fileID: 1348340914593356}
   pointerPrefab: {fileID: 1454903199218644, guid: f49a2551aeabeac42b48512328581d65,
     type: 2}
+  pointerGO: {fileID: 0}
 --- !u!114 &114856403836054608
 MonoBehaviour:
   m_ObjectHideFlags: 1

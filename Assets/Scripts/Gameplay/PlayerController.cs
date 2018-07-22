@@ -127,6 +127,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (moveSpeed <= 0f)
+            moveSpeed = 1f;
+
         currentStamina = stamina;
         hp.SetMaxHealth(health);
     }

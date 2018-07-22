@@ -119,7 +119,7 @@ MonoBehaviour:
   movementSpeed: 0
   sprintSpeed: 0
   legOrientation: 0
-  damages: 2
+  damages: 15
   range: 1.25
   armOrientation: 0
   health: 0
