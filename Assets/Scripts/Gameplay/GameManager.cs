@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
                     {
                         SoundManager._instance.PlayMusic(SoundType.Boss);
                         Instantiate(prefabsRooms[3].gameObject);
+                        Instantiate(bossPrefab);
                     }
                     break;
 
