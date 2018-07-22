@@ -41,12 +41,13 @@ public class Health : MonoBehaviour {
         hp = maxHp * ratio;
     }
 
-    public void SetHealth(float health)
+    public void Heal(float heal)
     {
-        if (health <= hp)
-            hp = health;
-        else
+        hp += heal;
+        if (hp > maxHp)
             hp = maxHp;
+
+        UpdateHealthBar();
     }
 
     private void UpdateShieldBar()

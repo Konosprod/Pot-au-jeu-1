@@ -17,7 +17,7 @@ public class Builder : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        loadItems();
+        LoadItems();
     }
 
     void Update()
@@ -108,7 +108,7 @@ public class Builder : MonoBehaviour {
                                 sp.part = part;
                                 inventory.stock[selectedItem]--;
                                 selectedItem = 0;
-                                loadItems();
+                                LoadItems();
                             }
                         }
 
@@ -120,6 +120,7 @@ public class Builder : MonoBehaviour {
 
     public void ExitToGame()
     {
+        player.GetComponent<PlayerController>().CheckPlayerStats(); // Update the player stats with the new bodyparts calculated
         GameManager._instance.ShowNextMaps();
     }
 
@@ -131,7 +132,7 @@ public class Builder : MonoBehaviour {
         }
     }
 
-    private void loadItems()
+    private void LoadItems()
     {
         CleanItems();
         Inventory inventory = player.GetComponent<Inventory>();

@@ -999,7 +999,8 @@ MonoBehaviour:
   shield: 0
   healthBar: {fileID: 0}
   shieldBar: {fileID: 0}
-  bloodSplashPrefab: {fileID: 0}
+  bloodSplashPrefab: {fileID: 1808033199810630, guid: 003b84be73628b343b00ceb1b7d96279,
+    type: 2}
 --- !u!114 &114641363671079536
 MonoBehaviour:
   m_ObjectHideFlags: 1
