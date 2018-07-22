@@ -9,4 +9,9 @@ public class MonsterStats : MonoBehaviour {
     public int requiredFloorLevel = 0;
 
     public GameObject monsterPrefab;
+
+    public GameObject pointerPrefab;
+
+    [HideInInspector]
+    public GameObject pointerGO; // The actual pointer of the specific mob
 }

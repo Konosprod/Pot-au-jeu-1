@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 17889666}
   - component: {fileID: 17889665}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,6 +408,7 @@ MonoBehaviour:
   - {fileID: 114942660757594638, guid: e7479e5d2470b684b923ad94185430f2, type: 2}
   - {fileID: 114548498916115318, guid: dfb4457416a6d3640856d898771e5d54, type: 2}
   - {fileID: 114991425517531028, guid: 02a1f63fbb8b65c40ad732be29e66d6f, type: 2}
+  canvasTransf: {fileID: 17889668}
 --- !u!1 &143706699
 GameObject:
   m_ObjectHideFlags: 0

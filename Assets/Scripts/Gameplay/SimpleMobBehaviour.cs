@@ -52,7 +52,7 @@ public class SimpleMobBehaviour : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("Player not found");
+            //Debug.LogError("Player not found");
         }
 	}
 }

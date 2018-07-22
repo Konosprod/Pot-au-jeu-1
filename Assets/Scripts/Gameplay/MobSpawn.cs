@@ -8,6 +8,8 @@ public class MobSpawn : MonoBehaviour {
 
     public List<MonsterStats> monsterPrefabs = new List<MonsterStats>();
 
+    public Transform canvasTransf;
+
     
     public List<GameObject> SpawnMonsters(int floorLevel)
     {
@@ -43,6 +45,9 @@ public class MobSpawn : MonoBehaviour {
                 if (Random.Range(0, 2) == 1) randY = -randY;
 
                 GameObject mobSpawned = Instantiate(mob.monsterPrefab, new Vector3(randX, randY, 0f), mob.monsterPrefab.transform.rotation);
+                GameObject pointerToMob = Instantiate(mob.pointerPrefab, canvasTransf);
+                mobSpawned.GetComponent<MonsterStats>().pointerGO = pointerToMob;
+                pointerToMob.GetComponent<PointToMob>().target = mobSpawned;
 
                 monstersSpawned.Add(mobSpawned);
                 points -= mob.spawnCost;

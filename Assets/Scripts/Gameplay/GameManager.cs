@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
                     {
                         SoundManager._instance.PlayMusic(SoundType.Fight);
                         Instantiate(prefabsRooms[0].gameObject);
+                        mobSpawner.canvasTransf = GameObject.Find("MainCanvas").transform;
                         mobs = mobSpawner.SpawnMonsters(map.GetRoom(currentRoomId).floorLevel);
                     }
                     break;

@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childCol: {fileID: 0}
-  attackTime: 4
+  attackTime: 1.8
   canAttack: 1
   projectile: {fileID: 1885953498958046, guid: 4a7675b091bde1141bb84b01698e4cbb, type: 2}
 --- !u!212 &212215588789809206

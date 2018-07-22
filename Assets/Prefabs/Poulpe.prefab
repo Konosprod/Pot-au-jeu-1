@@ -981,6 +981,8 @@ MonoBehaviour:
   spawnCost: 1
   requiredFloorLevel: 0
   monsterPrefab: {fileID: 1539504726838802}
+  pointerPrefab: {fileID: 1505331260465206, guid: 73d20c3d40c54014e996c68a773fbcca,
+    type: 2}
 --- !u!114 &114618981925577102
 MonoBehaviour:
   m_ObjectHideFlags: 1
