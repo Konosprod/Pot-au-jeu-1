@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour {
         }
         else
         {
-            fader.StartFadetoScene("Tuto");
+            fader.StartFadetoScene("Game");
         }
     }
 

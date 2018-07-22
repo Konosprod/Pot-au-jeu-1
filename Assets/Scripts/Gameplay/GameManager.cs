@@ -218,6 +218,12 @@ public class GameManager : MonoBehaviour
         roomCount = 0;
         currentRoomId = 0;
         triggerSpawned = false;
+
+        map = mapSystem.GenerateMap(nbFloor);
+        currentRoomId = map.rooms[0].id;
+
+
+        fader.StartFadetoScene("Game");
     }
 
     public void QuitGame()

@@ -157,6 +157,6 @@ public class Health : MonoBehaviour {
     public void GetRareLoot()
     {
         GameManager._instance.ShowNotification("You got a loot !", 2f);
-        inventory.stock[Random.Range(20, 27)] += 1;
+        inventory.stock[Random.Range(1,19)] += 1;
     }
 }
