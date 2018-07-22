@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     public GameObject panel;
     public Fader fader;
     public GameObject canvasUi;
+    public GameObject notificationText;
 
     [Header("Maps")]
     public MapSystem mapSystem;
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour {
     {
         if(scene.name == "Game")
         {
+            notificationText = GameObject.Find("NotificationText");
             switch (map.GetRoom(currentRoomId).roomType)
             {
                 case MapSystem.RoomType.Combat:
@@ -89,12 +91,15 @@ public class GameManager : MonoBehaviour {
                 case MapSystem.RoomType.Heal:
                     {
                         Instantiate(prefabsRooms[1].gameObject);
+                        player.GetComponent<Health>().hp += player.GetComponent<Health>().maxHp / 2;
+                        ShowNotification("Vous avez ete soigne...", 2f);
                     }
                     break;
 
                 case MapSystem.RoomType.Chest:
                     {
                         Instantiate(prefabsRooms[2].gameObject);
+                        ShowNotification("Vous sentez la richesse non loin...", 2f);
                     }
                     break;
 
@@ -147,6 +152,11 @@ public class GameManager : MonoBehaviour {
             Debug.Log("Victory");
             triggerSpawned = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            ShowNextMaps();
+        }
 	}
 
     public void ShowNextMaps()
@@ -180,5 +190,18 @@ public class GameManager : MonoBehaviour {
             fader.StartFadetoScene("Game");
         else
             fader.StartFadetoScene("Building");
+    }
+
+    public void ShowNotification(string text, float time)
+    {
+        StartCoroutine(Notification(text, time));
+    }
+
+    IEnumerator Notification(string text, float time)
+    {
+        Debug.Log("here");
+        notificationText.GetComponent<Text>().text = text;
+        yield return new WaitForSeconds(time);
+        notificationText.GetComponent<Text>().text = "";
     }
 }
