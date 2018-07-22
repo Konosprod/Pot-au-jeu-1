@@ -120,7 +120,11 @@ public class GameManager : MonoBehaviour
                     break;
             }
 
-            //player = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindGameObjectWithTag("Player");
+
+            if (player == null)
+                player = Instantiate(playerPrefab);
+
             player.GetComponent<PlayerController>().canMove = true;
             fader = GameObject.FindObjectOfType<Fader>();
             camera = GameObject.Find("CM vcam1").GetComponent<Cinemachine.CinemachineVirtualCamera>();
@@ -130,10 +134,28 @@ public class GameManager : MonoBehaviour
             panelWin.SetActive(false);
             canvasUi.SetActive(false);
         }
-        else
+        else if(scene.name == "Building")
         {
             fader = GameObject.FindObjectOfType<Fader>();
             player.GetComponent<PlayerController>().canMove = false;
+        }
+        else
+        {
+            panelRetry.SetActive(false);
+            panelWin.SetActive(false);
+            canvasUi.SetActive(false);
+
+            Destroy(player.gameObject);
+            player = Instantiate(playerPrefab.gameObject);
+
+            roomCount = 0;
+            currentRoomId = 0;
+            triggerSpawned = false;
+
+            map = mapSystem.GenerateMap(nbFloor);
+            currentRoomId = map.rooms[0].id;
+
+            Destroy(player.gameObject);
         }
 
         roomCount++;
@@ -166,9 +188,9 @@ public class GameManager : MonoBehaviour
             panelWin.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            ShowNextMaps();
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
