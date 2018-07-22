@@ -49,7 +49,7 @@ public class InkNova : Attack {
             ChildCollider cc = col.gameObject.GetComponent<ChildCollider>();
             if (cc != null && !cc.IsPlayer())
             {
-                Debug.Log(col.gameObject.name);
+                //Debug.Log(col.gameObject.name);
                 cc.TakeDamage(damage);
             }
         }

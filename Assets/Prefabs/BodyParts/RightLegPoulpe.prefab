@@ -96,12 +96,12 @@ MonoBehaviour:
   itemName: Lower Right Tent.
   healthRestored: 0
   quantity: 0
-  partType: 0
+  partType: 1
   canPick: 0
   itemSprite: {fileID: 21300000, guid: cb2d987a251e2ad4cbbd4014e246ada6, type: 3}
-  stamina: 0
-  movementSpeed: 0
-  sprintSpeed: 0
+  stamina: 15
+  movementSpeed: 5.5
+  sprintSpeed: 0.3
   legOrientation: 1
   damages: 0
   range: 0

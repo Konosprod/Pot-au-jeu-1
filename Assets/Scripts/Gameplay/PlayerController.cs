@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     private Health hp;
 
     // Movement
-    public float staminaConsumption = 10.0f; // Stamina used per second of sprinting
-    public float staminaRegen = 5.0f;        // Stamina regenerated per second of not sprinting
+    public float staminaConsumption = 15.0f; // Stamina used per second of sprinting
+    public float staminaRegen = 10.0f;        // Stamina regenerated per second of not sprinting
     private bool isSprinting = false;
     public Image staminaBar;
     private float currentStamina = _stamina;
@@ -21,18 +21,18 @@ public class PlayerController : MonoBehaviour
     // Defaults
     private const float _intelligence = 5.0f;
     private const float _stamina = 50.0f;
-    private const float _moveSpeed = 10.0f;
-    private const float _sprintSpeed = 1.5f;
+    private const float _moveSpeed = 2.0f;
+    private const float _sprintSpeed = 1.2f;
     private const float _health = 100.0f;
     private const float _armor = 0.0f;
 
     // Totals
-    private float intelligence;
-    private float stamina;
-    private float moveSpeed;
-    private float sprintSpeed;
-    private float health;
-    private float armor;
+    public float intelligence;
+    public float stamina;
+    public float moveSpeed;
+    public float sprintSpeed;
+    public float health;
+    public float armor;
 
     // Use this for initialization
     void Start()
@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
                 case PartType.Body:
                     health += bp.health;
                     armor += bp.armor;
+                    moveSpeed += bp.movementSpeed;
                     break;
                 case PartType.Head:
                     intelligence += bp.intelligence;

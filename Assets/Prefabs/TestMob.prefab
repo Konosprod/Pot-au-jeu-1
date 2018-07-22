@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531707cc9fbe2dd4fa86d046ed7bc304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.3
+  speed: 2.8
 --- !u!114 &114622565815851570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -714,6 +714,7 @@ MonoBehaviour:
   monsterPrefab: {fileID: 1113317764870424}
   pointerPrefab: {fileID: 1883868568451672, guid: 46b92cd639ca0e8419c22c5fa27ea4db,
     type: 2}
+  pointerGO: {fileID: 0}
 --- !u!114 &114978747949555150
 MonoBehaviour:
   m_ObjectHideFlags: 1

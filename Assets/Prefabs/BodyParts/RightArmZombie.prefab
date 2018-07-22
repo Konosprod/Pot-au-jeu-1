@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeAttack: 0
-  atk: 10
+  atk: 15
 --- !u!212 &212573333078333894
 SpriteRenderer:
   m_ObjectHideFlags: 1

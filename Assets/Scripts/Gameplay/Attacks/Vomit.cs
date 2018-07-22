@@ -50,7 +50,7 @@ public class Vomit : Attack {
             ChildCollider cc = rayHit.collider.gameObject.GetComponent<ChildCollider>();
             if (cc != null && !cc.IsPlayer())
             {
-                Debug.Log(rayHit.collider.gameObject.name);
+                //Debug.Log(rayHit.collider.gameObject.name);
                 cc.TakeDamage(damage);
             }
         }

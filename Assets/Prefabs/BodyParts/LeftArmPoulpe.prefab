@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeAttack: 0
-  atk: 15
+  atk: 12
 --- !u!114 &114852202765703412
 MonoBehaviour:
   m_ObjectHideFlags: 1

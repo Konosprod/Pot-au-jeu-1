@@ -1156,8 +1156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8d1332d11dbeb41853c1c7a8c0ecde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaConsumption: 10
-  staminaRegen: 5
+  staminaConsumption: 15
+  staminaRegen: 10
   staminaBar: {fileID: 114829031449233056}
   canMove: 1
 --- !u!114 &114321622930403962
@@ -1208,13 +1208,13 @@ MonoBehaviour:
   canPick: 0
   itemSprite: {fileID: 0}
   stamina: 0
-  movementSpeed: 0
+  movementSpeed: -2.5
   sprintSpeed: 0
   legOrientation: 0
   damages: 0
   range: 0
   armOrientation: 0
-  health: 0
+  health: 25
   armor: 0
   intelligence: 0
   skill: {fileID: 0}
@@ -1290,9 +1290,9 @@ MonoBehaviour:
   partType: 1
   canPick: 0
   itemSprite: {fileID: 0}
-  stamina: 0
-  movementSpeed: 0
-  sprintSpeed: 0
+  stamina: 10
+  movementSpeed: 4.5
+  sprintSpeed: 0.15
   legOrientation: 1
   damages: 0
   range: 1
@@ -1654,9 +1654,9 @@ MonoBehaviour:
   partType: 1
   canPick: 0
   itemSprite: {fileID: 0}
-  stamina: 0
-  movementSpeed: 0
-  sprintSpeed: 0
+  stamina: 10
+  movementSpeed: 4.5
+  sprintSpeed: 0.15
   legOrientation: 0
   damages: 0
   range: 1

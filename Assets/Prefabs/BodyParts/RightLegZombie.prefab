@@ -96,11 +96,11 @@ MonoBehaviour:
   itemName: Zombie Right Leg
   healthRestored: 0
   quantity: 0
-  partType: 0
+  partType: 1
   canPick: 0
   itemSprite: {fileID: 21300000, guid: 046d9efe5d5c510478a22bef72064100, type: 3}
-  stamina: 0
-  movementSpeed: 0
+  stamina: 30
+  movementSpeed: 6.5
   sprintSpeed: 0
   legOrientation: 1
   damages: 0

@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531707cc9fbe2dd4fa86d046ed7bc304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.3
+  speed: 3.5
 --- !u!114 &114541182962481260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -978,11 +978,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cb1196cb3ddb4469c54c1244f90b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCost: 1
-  requiredFloorLevel: 0
+  spawnCost: 3
+  requiredFloorLevel: 3
   monsterPrefab: {fileID: 1539504726838802}
   pointerPrefab: {fileID: 1505331260465206, guid: 73d20c3d40c54014e996c68a773fbcca,
     type: 2}
+  pointerGO: {fileID: 0}
 --- !u!114 &114618981925577102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -996,7 +997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   maxHp: 100
-  hp: 30
+  hp: 40
   maxShield: 100
   shield: 0
   healthBar: {fileID: 0}
