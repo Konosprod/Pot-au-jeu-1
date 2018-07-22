@@ -123,7 +123,6 @@ public class GameManager : MonoBehaviour {
         }
 
         roomCount++;
-        Debug.Log(roomCount);
         choiceShowed = false;
         player.transform.position = Vector2.zero;
     }

@@ -13,7 +13,9 @@ public enum SoundType
 
 public enum SFXType
 {
-    None
+    None,
+    ButtonClick,
+    FateClick
 };
 
 public class SoundManager : MonoBehaviour

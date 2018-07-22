@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 196952798}
   - component: {fileID: 196952797}
   - component: {fileID: 196952796}
+  - component: {fileID: 196952799}
   m_Layer: 5
   m_Name: ButtonQuit
   m_TagString: Untagged
@@ -420,6 +421,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 196952794}
   m_CullTransparentMesh: 0
+--- !u!114 &196952799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 196952794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b66d5596c108040b6be0776b58b60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClickSound: 1
 --- !u!1 &221635724
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +735,7 @@ GameObject:
   - component: {fileID: 297074066}
   - component: {fileID: 297074065}
   - component: {fileID: 297074064}
+  - component: {fileID: 297074067}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -798,17 +812,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1939310749}
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &297074065
@@ -830,8 +833,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300138, guid: 7a35f92b9ad822e448dfec1679adccfb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -845,6 +848,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 297074062}
   m_CullTransparentMesh: 0
+--- !u!114 &297074067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297074062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b66d5596c108040b6be0776b58b60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClickSound: 1
 --- !u!1 &304918944
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +999,7 @@ GameObject:
   - component: {fileID: 338239164}
   - component: {fileID: 338239163}
   - component: {fileID: 338239162}
+  - component: {fileID: 338239165}
   m_Layer: 5
   m_Name: ButtonOptions
   m_TagString: Untagged
@@ -1096,6 +1112,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 338239160}
   m_CullTransparentMesh: 0
+--- !u!114 &338239165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 338239160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b66d5596c108040b6be0776b58b60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClickSound: 1
 --- !u!1 &487815707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2373,7 @@ GameObject:
   - component: {fileID: 942243109}
   - component: {fileID: 942243108}
   - component: {fileID: 942243107}
+  - component: {fileID: 942243110}
   m_Layer: 5
   m_Name: ButtonPlay
   m_TagString: Untagged
@@ -2457,6 +2486,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 942243105}
   m_CullTransparentMesh: 0
+--- !u!114 &942243110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942243105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b66d5596c108040b6be0776b58b60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClickSound: 1
 --- !u!1 &1097869101
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,7 +4212,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 458dadd7ca78c0d49aaf90e6d67d359e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0

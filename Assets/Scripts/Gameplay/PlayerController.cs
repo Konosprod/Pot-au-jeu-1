@@ -91,7 +91,8 @@ public class PlayerController : MonoBehaviour
 
         float speedMult = moveSpeed * ((isSprinting) ? sprintSpeed : 1.0f);
 
-        rb.velocity = new Vector2(input.x, input.y) * speedMult;
+        if(canMove)
+            rb.velocity = new Vector2(input.x, input.y) * speedMult;
     }
 
 
