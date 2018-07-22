@@ -8,6 +8,8 @@ public class Attack : MonoBehaviour {
     public ChildCollider childCol;
 
     public float attackTime = 0.5f;
+
+    [HideInInspector]
     public bool canAttack = true;
 
     // Use this for initialization
