@@ -152,4 +152,10 @@ public class Health : MonoBehaviour {
             Debug.LogError("A monster is trying to steal the loot ?!");
         }
     }
+
+    public void GetRareLoot()
+    {
+        GameManager._instance.ShowNotification("You got a loot !", 2f);
+        inventory.stock[Random.Range(20, 27)] += 1;
+    }
 }
