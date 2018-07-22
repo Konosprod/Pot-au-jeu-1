@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject panel;
     public Fader fader;
     public GameObject canvasUi;
+    public GameObject panelRetry;
+    public GameObject panelWin;
     public GameObject notificationText;
 
     [Header("Maps")]
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject buttonPrefab;
     public GameObject nextMapTriggerPrefab;
+    public GameObject bossPrefab;
     public GameObject[] prefabsRooms;
 
     [Header("Camera")]
@@ -123,6 +126,9 @@ public class GameManager : MonoBehaviour
             camera = GameObject.Find("CM vcam1").GetComponent<Cinemachine.CinemachineVirtualCamera>();
             camera.Follow = player.transform;
             triggerSpawned = false;
+            panelRetry.SetActive(false);
+            panelWin.SetActive(false);
+            canvasUi.SetActive(false);
         }
         else
         {
@@ -139,6 +145,8 @@ public class GameManager : MonoBehaviour
     public void LoseTheGame()
     {
         isOver = true;
+        canvasUi.SetActive(true);
+        panelRetry.SetActive(true);
     }
 
     // Update is called once per frame
@@ -153,8 +161,9 @@ public class GameManager : MonoBehaviour
 
         if (roomCount == nbFloor + 1 && mobs.Count == 0 && triggerSpawned == false)
         {
-            Debug.Log("Victory");
             triggerSpawned = true;
+            canvasUi.SetActive(true);
+            panelWin.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.N))
@@ -195,6 +204,25 @@ public class GameManager : MonoBehaviour
             fader.StartFadetoScene("Game");
         else
             fader.StartFadetoScene("Building");
+    }
+
+    public void Reset()
+    {
+        panelRetry.SetActive(false);
+        panelWin.SetActive(false);
+        canvasUi.SetActive(false);
+
+        Destroy(player.gameObject);
+        player = Instantiate(playerPrefab.gameObject);
+
+        roomCount = 0;
+        currentRoomId = 0;
+        triggerSpawned = false;
+    }
+
+    public void QuitGame()
+    {
+        fader.StartFadetoScene("MainMenu");
     }
 
     public void ShowNotification(string text, float time)
