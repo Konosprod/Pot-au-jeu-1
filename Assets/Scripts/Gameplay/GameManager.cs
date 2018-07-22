@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public static GameManager _instance;
 
@@ -38,9 +39,11 @@ public class GameManager : MonoBehaviour {
     private bool choiceShowed = false;
 
     private int roomCount = 0;
+    private int nbFloor = 10;
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake()
+    {
         if (_instance == null)
         {
             _instance = this;
@@ -51,14 +54,14 @@ public class GameManager : MonoBehaviour {
         }
 
         mobSpawner = GetComponent<MobSpawn>();
-	}
+    }
 
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneChanged;
-        map = mapSystem.GenerateMap(10);
+        map = mapSystem.GenerateMap(nbFloor);
 
-        switch(map.rooms[0].roomType)
+        switch (map.rooms[0].roomType)
         {
             case MapSystem.RoomType.Combat:
                 {
@@ -76,7 +79,7 @@ public class GameManager : MonoBehaviour {
 
     private void OnSceneChanged(Scene scene, LoadSceneMode arg1)
     {
-        if(scene.name == "Game")
+        if (scene.name == "Game")
         {
             notificationText = GameObject.Find("NotificationText");
             switch (map.GetRoom(currentRoomId).roomType)
@@ -137,27 +140,28 @@ public class GameManager : MonoBehaviour {
     {
         isOver = true;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if(mobs.Count == 0 && triggerSpawned == false && roomCount < 10)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (mobs.Count == 0 && triggerSpawned == false && roomCount <= nbFloor)
         {
             GameObject go = Instantiate(nextMapTriggerPrefab.gameObject);
             go.transform.position = Vector3.zero;
             triggerSpawned = true;
         }
 
-        if (roomCount == 10 && mobs.Count == 0 && triggerSpawned == false)
+        if (roomCount == nbFloor + 1 && mobs.Count == 0 && triggerSpawned == false)
         {
             Debug.Log("Victory");
             triggerSpawned = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             ShowNextMaps();
         }
-	}
+    }
 
     public void ShowNextMaps()
     {
@@ -167,6 +171,7 @@ public class GameManager : MonoBehaviour {
 
             foreach (int id in nextRoomsId)
             {
+                //Debug.Log("Next room : " + id);
                 GameObject button = Instantiate(buttonPrefab.gameObject, panel.transform);
                 button.GetComponentInChildren<Text>().text = map.GetRoom(id).roomType.ToString();
                 button.GetComponent<ButtonChoice>().id = id;

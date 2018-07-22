@@ -212,12 +212,24 @@ public class MapSystem : MonoBehaviour
             currentFloor++;
         }
 
-        Room bossRoom = new Room(RoomType.Boss, maxFloors);
-        map.AddRoom(bossRoom);
+
+        Room forcedHealRoom = new Room(RoomType.Heal, maxFloors);
+        Room forcedBuildRoom = new Room(RoomType.Builder, maxFloors);
+        map.AddRoom(forcedHealRoom);
+        map.AddRoom(forcedBuildRoom);
+        //Debug.Log("FHR : " + forcedHealRoom.id + ", RT : " + forcedHealRoom.roomType);
+        //Debug.Log("FBR : " + forcedBuildRoom.id + ", RT : " + forcedBuildRoom.roomType);
         foreach (int currMap in roomsOnCurrentFloor)
         {
-            map.AddLink(currMap, bossRoom.id);
+            map.AddLink(currMap, forcedHealRoom.id);
+            map.AddLink(currMap, forcedBuildRoom.id);
         }
+
+        Room bossRoom = new Room(RoomType.Boss, maxFloors+1);
+        //Debug.Log("BossR : " + bossRoom.id);
+        map.AddRoom(bossRoom);
+        map.AddLink(forcedHealRoom.id, bossRoom.id);
+        map.AddLink(forcedBuildRoom.id, bossRoom.id);
 
 
 

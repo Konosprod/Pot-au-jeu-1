@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChildCollider : MonoBehaviour {
 
+    [HideInInspector]
     public bool activeAttack = false;
 
     public int atk = 10;
