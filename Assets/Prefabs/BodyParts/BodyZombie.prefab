@@ -173,13 +173,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984777198216438}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -1, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 4194817658389186}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4661133435603410
 Transform:
   m_ObjectHideFlags: 1
@@ -397,7 +397,7 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212990066969022266}
-  body: {fileID: 0}
+  body: {fileID: 1276461214759654}
   part: {fileID: 0}
 --- !u!114 &114267256265880902
 MonoBehaviour:
@@ -414,7 +414,7 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212709479772010144}
-  body: {fileID: 0}
+  body: {fileID: 1276461214759654}
   part: {fileID: 0}
 --- !u!114 &114338213991517852
 MonoBehaviour:
@@ -460,7 +460,7 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212555949810341104}
-  body: {fileID: 0}
+  body: {fileID: 1276461214759654}
   part: {fileID: 0}
 --- !u!114 &114733198753612420
 MonoBehaviour:
@@ -477,7 +477,7 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212422673805582802}
-  body: {fileID: 0}
+  body: {fileID: 1276461214759654}
   part: {fileID: 0}
 --- !u!114 &114932297432516228
 MonoBehaviour:
@@ -494,7 +494,7 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0.8450513, a: 0}
   unselectedColor: {r: 1, g: 0, b: 0.882353, a: 1}
   spriteRenderer: {fileID: 212719823432489956}
-  body: {fileID: 0}
+  body: {fileID: 1276461214759654}
   part: {fileID: 0}
 --- !u!114 &114942782808588368
 MonoBehaviour:
@@ -731,7 +731,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5

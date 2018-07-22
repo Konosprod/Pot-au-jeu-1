@@ -58,6 +58,8 @@ GameObject:
   - component: {fileID: 212870367790708828}
   - component: {fileID: 61941216578214864}
   - component: {fileID: 114513324566329158}
+  - component: {fileID: 114738326408832610}
+  - component: {fileID: 114640076678677940}
   m_Layer: 0
   m_Name: LeftArmZombie
   m_TagString: Untagged
@@ -934,6 +936,19 @@ MonoBehaviour:
   armor: 0
   intelligence: 0
   skill: {fileID: 0}
+--- !u!114 &114640076678677940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235791402033582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81edda5fabf59d4abebb6ef19886d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeAttack: 0
+  atk: 10
 --- !u!114 &114648593141508780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -993,6 +1008,21 @@ MonoBehaviour:
   armor: 0
   intelligence: 0
   skill: {fileID: 0}
+--- !u!114 &114738326408832610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235791402033582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4696b594a0fc4d6448fb02be8e79d440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
+  attackTime: 1
+  canAttack: 1
+  forward: 1
 --- !u!114 &114779931110456626
 MonoBehaviour:
   m_ObjectHideFlags: 1

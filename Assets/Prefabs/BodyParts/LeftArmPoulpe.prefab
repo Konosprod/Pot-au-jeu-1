@@ -114,7 +114,7 @@ MonoBehaviour:
   quantity: 0
   partType: 0
   canPick: 0
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 244609e1b797b9648b59fd68474113d7, type: 3}
   stamina: 0
   movementSpeed: 0
   sprintSpeed: 0
