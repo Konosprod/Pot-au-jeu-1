@@ -18,7 +18,7 @@ public class ArmSwipe : Attack
     {
         if (childCol.IsPlayer())
         {
-            if (Input.GetKey(KeyCode.T))
+            if (Input.GetMouseButton(0))
             {
                 if (canAttack)
                 {
