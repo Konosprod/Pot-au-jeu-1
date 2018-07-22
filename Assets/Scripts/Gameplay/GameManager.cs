@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour {
                 case MapSystem.RoomType.Heal:
                     {
                         Instantiate(prefabsRooms[1].gameObject);
-                        player.GetComponent<Health>().hp += player.GetComponent<Health>().maxHp / 2;
+                        player.GetComponent<Health>().Heal(player.GetComponent<Health>().maxHp / 2);
                         ShowNotification("Vous avez ete soigne...", 2f);
                     }
                     break;
