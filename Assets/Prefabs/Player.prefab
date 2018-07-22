@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 61751395282927710}
   - component: {fileID: 114321622930403962}
   - component: {fileID: 114586490859484414}
+  - component: {fileID: 114212442411365154}
   m_Layer: 0
   m_Name: HeadTest
   m_TagString: Untagged
@@ -1104,6 +1105,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114212442411365154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737906090738592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800261908c78d234e91215abe128acda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childCol: {fileID: 0}
+  attackTime: 0.5
+  canAttack: 1
+  projectile: {fileID: 1885953498958046, guid: 4a7675b091bde1141bb84b01698e4cbb, type: 2}
 --- !u!114 &114226779578671642
 MonoBehaviour:
   m_ObjectHideFlags: 1

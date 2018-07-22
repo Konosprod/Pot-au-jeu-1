@@ -13,6 +13,7 @@ public class ChildCollider : MonoBehaviour {
     private int layerLoot;
     private int layerMapTrigger;
     private int layerChestTrigger;
+    private int layerProjectile;
 
 
     // Use this for initialization
@@ -21,6 +22,7 @@ public class ChildCollider : MonoBehaviour {
         layerLoot = LayerMask.NameToLayer("Loot");
         layerMapTrigger = LayerMask.NameToLayer("MapTrigger");
         layerChestTrigger = LayerMask.NameToLayer("ChestTrigger");
+        layerProjectile = LayerMask.NameToLayer("Projectile");
         parentHP = transform.parent.gameObject.GetComponent<Health>();
         if(parentHP == null)
             parentHP = GetComponentInParent<Health>();
@@ -76,6 +78,12 @@ public class ChildCollider : MonoBehaviour {
         if(IsPlayer() && col.gameObject.layer == layerChestTrigger)
         {
             parentHP.GetRareLoot();
+        }
+
+        if(!IsPlayer() && col.gameObject.layer == layerProjectile)
+        {
+            parentHP.TakeDamage(col.gameObject.GetComponent<ProjectileMove>().damage);
+            Destroy(col.gameObject);
         }
     }
 }
