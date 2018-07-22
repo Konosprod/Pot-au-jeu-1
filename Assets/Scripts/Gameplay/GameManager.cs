@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     private bool choiceShowed = false;
 
     private int roomCount = 0;
-    private int nbFloor = 1;
+    private int nbFloor = 10;
 
     // Use this for initialization
     void Awake()

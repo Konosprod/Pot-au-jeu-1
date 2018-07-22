@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Healing.unity
     guid: 4724889d774ec5a4d8daeae2a41211cf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tuto.unity
     guid: 10ebe2365c204d2449f15404bfbb45f2
   m_configObjects: {}
